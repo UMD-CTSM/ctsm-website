@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './LandingPage';
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -14,7 +14,7 @@ import '@fontsource/roboto/700.css';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-const defaultTheme = createTheme({ palette: {mode:'light'} });
+const defaultTheme = responsiveFontSizes(createTheme({ palette: {mode:'light'},}));
 root.render(
   <React.StrictMode>
     

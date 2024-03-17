@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
+import logo from '../images/logo.png';
+
 export default function Hero() {
   return (
     <Box
@@ -31,6 +33,7 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
+        <img src={logo} style={{width:200}}/>
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
           <Typography
             component="h1"
@@ -42,14 +45,14 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Rail Network Analysis Tools
+            Infrastructure Climate Networks
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
             A collection of tools for analysing railway network resiliency and reliability,<br/>developed by the folks at&nbsp;
-            <Link href="https://ctsm.umd.edu">UMD's CTSM Lab</Link>.
+            <Link href="https://ctsm.umd.edu">UMD's Center for Technology and Systems Management</Link>.
           </Typography>
-          </Stack>
-          </Container>
+        </Stack>
+      </Container>
     </Box>
   );
 }

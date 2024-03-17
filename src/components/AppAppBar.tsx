@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo from '../logo.png';
+import logo from '../images/logo.png';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -41,8 +41,11 @@ function AppAppBar() {
   };
 
   const menuLinks = [
-    {link:'asd', text: 'Rail NTA'},
-    {link:'asd', text: 'Class I Railroads Case Study'},
+    {link:'about', text: 'About'},
+    {link:'tools', text: 'Tools'},
+    {link:'publications', text: 'Publications'},
+    {link:'sponsors', text: 'Sponsors'},
+    {link:'contacts', text: 'Contact Us'},
   ];
 
   return (

@@ -60,12 +60,12 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container id="tools" sx={{ py: { xs: 8, sm: 16 } }}>
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
-            <Typography component="h2" variant="h4" color="text.primary">
-              Our Tools
+            <Typography component="h2" variant="h2" color="text.primary">
+              Tools
             </Typography>
             <Typography
               variant="body1"
