@@ -49,7 +49,9 @@ export default function Hero() {
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
             A collection of tools for analysing railway network resiliency and reliability,<br/>developed by the folks at&nbsp;
-            <Link href="https://ctsm.umd.edu">UMD's Center for Technology and Systems Management</Link>.
+            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link>&nbsp;
+            of <Link href="https://cee.umd.edu/">the Department of Civil and Environmental Engineering (CEE)</Link>&nbsp;
+            at <Link href="https://umd.edu/">the University of Maryland (UMD)</Link>.
           </Typography>
         </Stack>
       </Container>

@@ -1,5 +1,5 @@
 {
-  "name": "react_demo",
+  "name": "infrastructure_climate_networks",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "upload": "scp -r ./build/* fxcrsymy@162.241.225.96:~/public_html/website_02f6c0e5"
+    "upload": "npm run build && scp -r ./build/* fxcrsymy@162.241.225.96:~/public_html/website_02f6c0e5"
   },
   "eslintConfig": {
     "extends": [

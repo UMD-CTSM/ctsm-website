@@ -43,16 +43,16 @@ export default function AboutUs() {
             About CTSM
           </Typography>
           <Typography variant="subtitle1">
-            <Link href="https://ctsm.umd.edu">The Center for Technology and Systems Management (CTSM)</Link> is in pursuit of equitable climate-resilient and sustainable of infrastructure
+            The Center for Technology and Systems Management (<Link href="https://ctsm.umd.edu">CTSM</Link>) is in pursuit of equitable climate-resilient and sustainable of infrastructure
           </Typography>
           <Typography>
             With a motto of <b>Technology for Intelligent Decisions</b>, CTSM develops technologies and creatively utilizes
             sophisticated analytical tools to meet sets of objectives for making decisions in various systems
           </Typography>
           <Typography>
-          Members: <Link href="mailto:ba@umd.edu">Dr. Bilal M. Ayyub</Link> (ICN Lead), Mr. Yujie Mao,
+          Members: Dr. <Link href="mailto:ba@umd.edu">Bilal M. Ayyub</Link> (ICN Lead), Mr. Yujie Mao,
           Mr. Sherief Elsibaie, Mr. Nathan Chan,
-          Dr. Magdy Elsibaie, Dr. Yating Zhang
+          Dr. Magdy Elsibaie and Dr. Yating Zhang
           </Typography>
         </Stack>
       </Container>

@@ -37,7 +37,7 @@ const items = [
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: 'Case Study: Class I Railroads',
+    title: 'Climate Impact for Adaptation (CIA)',
     description:
       <React.Fragment>
         <p>
@@ -72,7 +72,7 @@ export default function Features() {
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              The following are tools developed by various members of CTSM
+              The following tools developed by CTSM are offered as open access:
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
