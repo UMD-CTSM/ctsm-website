@@ -108,9 +108,9 @@ export default function Testimonials() {
                   <CardHeader
                     title={paper.title}
                     subheader={(() : string=> {
-                      const a = paper.author?.find((a : any)=>a.sequence === 'first');
+                      const aStr = paper.author.map((a:any) => `${a?.given} ${a?.family}`).join(', ');
                       const pParts = paper.published['date-parts'][0];
-                      return `${a?.given} ${a?.family} | Published ${(pParts[2])? pParts[2]+'/':''}${pParts[1]}/${pParts[0]}`
+                      return `${aStr} | Published ${(pParts[2])? pParts[2]+'/':''}${pParts[1]}/${pParts[0]}`
                     })()}
                   />
                   {/* <img
