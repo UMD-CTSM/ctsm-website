@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 import logo from '../images/logo.png';
@@ -33,11 +31,11 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <img src={logo} style={{width:200}}/>
+        <img src={logo} style={{width:200}} alt=''/>
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
           <Typography
             component="h1"
-            variant="h1"
+            variant="h2"
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
@@ -45,13 +43,14 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Infrastructure Climate Networks
+            Infrastructure-Climate Networks
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            A collection of tools for analysing railway network resiliency and reliability,<br/>developed by the folks at&nbsp;
-            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link>&nbsp;
-            of <Link href="https://cee.umd.edu/">the Department of Civil and Environmental Engineering (CEE)</Link>&nbsp;
-            at <Link href="https://umd.edu/">the University of Maryland (UMD)</Link>.
+            The Infrastructure-Climate Networks (ICN) is an initiative of&nbsp;
+            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link> provides a collection of tools for analyzing infrastructure networks for performance, reliability resilience.
+            The underlying methods and tools are developed by researchers of&nbsp;
+            <Link href="https://ctsm.umd.edu/">CTSM</Link> from
+            the <Link href="https://cee.umd.edu/">Department of Civil and Environmental Engineering (CEE)</Link> at the <Link href="https://umd.edu/">University of Maryland (UMD)</Link>.
           </Typography>
         </Stack>
       </Container>

@@ -9,27 +9,23 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 
 import class1_sc from '../images/class1_sc.png';
 import railnta_sc from '../images/railnta_sc.png';
-import { CardActionArea, CardContent, CardHeader, CardMedia } from '@mui/material';
+import { CardActionArea, CardContent, CardMedia } from '@mui/material';
 
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
-    title: 'RailNTA',
+    title: 'Rail Network Topological Analysis and Throughput Assessment (RailNTA)',
     description:
       <React.Fragment>
         <p>
           Rail Network Topological Analysis and Throughput Assessment (RailNTA) is a python and network
           based tool to assess the topological connectedness efficiency of networks, and nodal and link
           criticality based on failure impacts.
-        </p>
-        <p>
-          By Sherief Elsibaie
         </p>
       </React.Fragment>,
     image: railnta_sc,
@@ -38,13 +34,7 @@ const items = [
   {
     icon: <EdgesensorHighRoundedIcon />,
     title: 'Climate Impact for Adaptation (CIA)',
-    description:
-      <React.Fragment>
-        <p>
-          An analysis of the impact of rising temperatures on Class I railroads in the USA.</p>
-        <p>
-          By Yating Zhang
-        </p></React.Fragment>,
+    description: <p>An analysis of the impact of rising temperatures on Class I railroads in the USA.</p>,
     image: class1_sc,
     url: 'https://railnta.ctsm-umd-edu.fxc.rsy.mybluehost.me/'
   }
@@ -82,18 +72,9 @@ export default function Features() {
                 label={title}
                 onClick={() => handleItemClick(index)}
                 sx={{
-                  borderColor: (theme) => {
-                    if (theme.palette.mode === 'light') {
-                      return selectedItemIndex === index ? 'primary.light' : '';
-                    }
-                    return selectedItemIndex === index ? 'primary.light' : '';
-                  },
-                  background: (theme) => {
-                    if (theme.palette.mode === 'light') {
-                      return selectedItemIndex === index ? 'none' : '';
-                    }
-                    return selectedItemIndex === index ? 'none' : '';
-                  },
+                  borderColor: (theme) => selectedItemIndex === index ? 'primary.light' : '',
+                  borderWidth: 3,
+                  background: (theme) => selectedItemIndex === index ? 'none' : '',
                   backgroundColor: selectedItemIndex === index ? 'primary.main' : '',
                   '& .MuiChip-label': {
                     color: selectedItemIndex === index ? '#fff' : '',
@@ -158,14 +139,8 @@ export default function Features() {
                   background: 'none',
                   backgroundColor:
                     selectedItemIndex === index ? 'action.selected' : undefined,
-                  borderColor: (theme) => {
-                    if (theme.palette.mode === 'light') {
-                      return selectedItemIndex === index
-                        ? 'primary.light'
-                        : 'grey.200';
-                    }
-                    return selectedItemIndex === index ? 'primary.dark' : 'grey.800';
-                  },
+                  borderColor: () => selectedItemIndex === index ? 'primary.light' : 'grey.200',
+                  borderWidth: 2,
                 }}
               >
                 <Box

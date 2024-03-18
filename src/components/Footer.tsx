@@ -12,17 +12,15 @@ import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
-const logoStyle = {
-  width: '140px',
-  height: 'auto',
-};
 
 function Copyright() {
+  var today = new Date();
+  today.setDate(today.getDate() - 2);
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
       <Link href="https://ctsm.umd.edu/">Center for Systems and Technology Management</Link>&nbsp;
-      {new Date().getFullYear()}
+      {new Date().getFullYear()}, last modified {today.toLocaleDateString()}
     </Typography>
   );
 }
@@ -35,7 +33,7 @@ export default function Footer() {
         flexDirection: 'column',
         alignItems: 'center',
         gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
+        py: { xs: 3 , sm: 5 },
         textAlign: { sm: 'center', md: 'left' },
       }}
     >
@@ -154,14 +152,14 @@ export default function Footer() {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          pt: { xs: 4, sm: 8 },
+          pt: { xs: 2, sm: 4 },
           width: '100%',
           borderTop: '1px solid',
           borderColor: 'divider',
         }}
       >
         <div>
-          <Link color="text.secondary" href="#">
+          {/* <Link color="text.secondary" href="#">
             Privacy Policy
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
@@ -169,10 +167,10 @@ export default function Footer() {
           </Typography>
           <Link color="text.secondary" href="#">
             Terms of Service
-          </Link>
+          </Link> */}
           <Copyright />
         </div>
-        <Stack
+        {/* <Stack
           direction="row"
           justifyContent="left"
           spacing={1}
@@ -205,7 +203,7 @@ export default function Footer() {
           >
             <LinkedInIcon />
           </IconButton>
-        </Stack>
+        </Stack> */}
       </Box>
     </Container>
   );
