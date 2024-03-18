@@ -29,14 +29,14 @@ const items = [
         </p>
       </React.Fragment>,
     image: railnta_sc,
-    url: 'https://www.infrastructureclimate.net/#'
+    url: 'https://railnta.infrastructureclimate.net/'
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
     title: 'Climate Impact for Adaptation (CIA)',
     description: <p>An analysis of the impact of rising temperatures on Class I railroads in the USA.</p>,
     image: class1_sc,
-    url: 'https://railnta.ctsm-umd-edu.fxc.rsy.mybluehost.me/'
+    url: 'https://cia.infrastructureclimate.net/'
   }
 ];
 
