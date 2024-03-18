@@ -8,11 +8,11 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 import bg2 from '../images/bg2.jpg';
-import { Link } from '@mui/material';
+import { CircularProgress, Link } from '@mui/material';
 
 export default function Testimonials() {
   const [papers, setPapers] = React.useState(Array<any>);
-
+  const [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
 
     const searchUrl = new URL('/works?' + new URLSearchParams({
@@ -34,7 +34,6 @@ export default function Testimonials() {
       // }
     }).then(resp => {
       if (resp.ok && resp.status === 200) resp.json().then(j => {
-        // 
         setPapers(j.message.items?.filter((p:any) => p.score > 35).slice(0,9).map((p : any) => {
           if (p.abstract){
             const absObj = (new DOMParser()).parseFromString(`<xml>${p.abstract}</xml>`, 'application/xml');
@@ -46,9 +45,10 @@ export default function Testimonials() {
             p.abstractText = absEls[0]?.textContent?.replace(/(<([^>]+)>)/gi, "") || '';
           }
           return p;
-        }))
+        }));
+        setLoading(false);
       });
-    }).catch(console.log);
+    });
     
   }, []);
 
@@ -80,10 +80,11 @@ export default function Testimonials() {
             textAlign: { sm: 'left', md: 'center' },
           }}
         >
-        <Typography component="h2" variant="h2" color="text.primary">
-          Publications
-        </Typography>
+          <Typography component="h2" variant="h2" color="text.primary">
+            Publications
+          </Typography>
         </Box>
+        {(loading)?<CircularProgress />:''}
         <Grid container spacing={2}>
           {papers.map((paper, index) => (
             <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>

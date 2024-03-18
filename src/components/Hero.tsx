@@ -47,7 +47,10 @@ export default function Hero() {
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
             The Infrastructure-Climate Networks (ICN) is an initiative of&nbsp;
-            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link> provides a collection of tools for analyzing infrastructure networks for performance, reliability resilience.
+            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link> to develop and
+            provide analysis methods and tools of infrastructure networks for performance, reliability, resilience,
+            risk and economics subjected to natural and human-caused hazards with
+            climate mitigation and adaptation considerations for sustainability.
             The underlying methods and tools are developed by researchers of&nbsp;
             <Link href="https://ctsm.umd.edu/">CTSM</Link> from
             the <Link href="https://cee.umd.edu/">Department of Civil and Environmental Engineering (CEE)</Link> at the <Link href="https://umd.edu/">University of Maryland (UMD)</Link>.
