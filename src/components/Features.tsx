@@ -36,7 +36,7 @@ const items = [
     title: 'Climate Impact for Adaptation (CIA)',
     description: <p>An analysis of the impact of rising temperatures on Class I railroads in the USA.</p>,
     image: class1_sc,
-    url: 'https://cia.infrastructureclimate.net/'
+    url: 'https://climateanalysis.infrastructureclimate.net/'
   }
 ];
 
