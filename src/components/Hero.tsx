@@ -43,7 +43,7 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Infrastructure-Climate Networks
+            Center for Technology and Systems Management
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
             The Infrastructure-Climate Networks (ICN) is an initiative of&nbsp;

@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import PeopleList from "./peopleList";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Person, PersonLocal, PersonUrl, PersonCategoryType } from "./PersonModel";
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import PersonIcon from '@mui/icons-material/Person';
+
+export default function People() {
+  const peopleByCategory = PeopleList.reduce((byCategory : {[K in PersonCategoryType]? : Person[]}, person : Person) => {
+    if ( !byCategory[person.category] ) {
+      byCategory[person.category] = [];
+    }
+    byCategory[person.category]?.push(person);
+    return byCategory;
+  }, {});
+
+
+  return (
+    <Grid container spacing={2}>
+      {Object.entries(peopleByCategory).map(([categoryName,people]) => 
+      <React.Fragment>
+        <Grid xs={12}>
+          <Typography variant='h3' component='h2'>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</Typography>
+        </Grid>
+        <PersonList personList={people}/>
+      </React.Fragment>
+      )}
+    </Grid>
+  );
+}
+
+
+const PersonList = ({personList} : {personList : Person[]}) =>{
+
+  return <React.Fragment>
+    {personList.map(person => <PersonCard person={person}/>)}
+  </React.Fragment>;
+}
+
+const PersonCard = ({person}: {person: Person}) => {
+  const personUrl =
+    (person instanceof PersonUrl)? person.url:
+    (person instanceof PersonLocal)? person.id : null;
+  const [imageMissing, setImageMissing] = useState(false);
+  const cardBody = <React.Fragment>
+    {imageMissing? null:
+    <CardMedia
+      component='img'
+      height='200'
+      image={person.imageUrl()}
+      onError={() =>setImageMissing(true)}
+    />}
+    
+    <CardContent>
+      {imageMissing? 
+<Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+><PersonIcon sx={{fontSize: 200, textAlign: 'center'}}/></Box>: null}
+      <Typography variant='h6'>{person.name}</Typography>
+      <Typography variant='caption'>{person.primaryAffiliation()}</Typography>
+    </CardContent>
+  </React.Fragment>;
+  return <Grid xs={12} sm={4} md={3}><Card key={person.name}>
+    {
+      (personUrl)?
+        <CardActionArea component={Link} to={personUrl}>{cardBody}</CardActionArea>:
+        <CardActionArea>{cardBody}</CardActionArea>
+    }
+  </Card></Grid>
+}

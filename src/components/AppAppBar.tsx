@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from '@mui/material/Link';
+import { Link as RouterLink } from 'react-router-dom';
 
 const logoStyle = {
   width: '120px',
@@ -25,26 +27,26 @@ function AppAppBar() {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      setOpen(false);
-    }
-  };
+  // const scrollToSection = (sectionId: string) => {
+  //   const sectionElement = document.getElementById(sectionId);
+  //   const offset = 128;
+  //   if (sectionElement) {
+  //     const targetScroll = sectionElement.offsetTop - offset;
+  //     sectionElement.scrollIntoView({ behavior: 'smooth' });
+  //     window.scrollTo({
+  //       top: targetScroll,
+  //       behavior: 'smooth',
+  //     });
+  //     setOpen(false);
+  //   }
+  // };
 
   const menuLinks = [
-    {link:'about', text: 'About'},
-    {link:'tools', text: 'Tools'},
-    {link:'publications', text: 'Publications'},
-    {link:'sponsors', text: 'Sponsors'},
-    {link:'contacts', text: 'Contact Us'},
+    {link:'/', text: 'Home'},
+    {link:'research', text: 'Our Research'},
+    {link:'team', text: 'The Team'},
+    {link:'publications', text: 'Our Publications'},
+    {link:'contact', text: 'Contact Us'},
   ];
 
   return (
@@ -97,10 +99,15 @@ function AppAppBar() {
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 {menuLinks.map(({link, text}) => <MenuItem
-                  onClick={() => scrollToSection(link)}
                   sx={{ py: '6px', px: '12px' }}
+                  component={RouterLink}
+                  to={link}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography
+                    variant="body2"
+                    color="text.primary"
+                    sx={{textDecoration: 'none'}}
+                  >
                     {text}
                   </Typography>
                 </MenuItem>)}
@@ -133,9 +140,7 @@ function AppAppBar() {
                       flexGrow: 1,
                     }}
                   ></Box>
-                  {menuLinks.map(({link, text})=><MenuItem onClick={() => scrollToSection(link)}>
-                    {text}
-                  </MenuItem>)}
+                  {menuLinks.map(({link, text})=><MenuItem LinkComponent={Link} component={RouterLink} to={link}>{text}</MenuItem>)}
                 </Box>
               </Drawer>
             </Box>

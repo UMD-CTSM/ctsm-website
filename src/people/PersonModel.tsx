@@ -1,0 +1,68 @@
+import { ReactElement } from 'react';
+
+export type PersonCategoryType = "faculty" | "researcher" | "student" | "alumni";
+type initPersonType = {
+  affiliations: string[],
+  enable?: boolean,
+  category: PersonCategoryType,
+  name: string,
+  id: string
+}
+class Person {
+  id: string;
+  enable: boolean;
+  category: PersonCategoryType;
+  name: string;
+  affiliations: string[];
+
+  constructor( initPerson : initPersonType) {
+    this.id = initPerson.id;
+    this.enable = initPerson.enable || true;
+    this.category = initPerson.category;
+    this.name = initPerson.name;
+    this.affiliations = initPerson.affiliations;
+  }
+
+  imageUrl() {
+    return `/images/people/${this.id}.jpg`;
+  }
+
+  primaryAffiliation() {
+    return this.affiliations[0] || '';
+  }
+}
+
+type initPersonUrlType = initPersonType & {
+  url: string
+};
+class PersonUrl extends Person{
+  url: string;
+  
+  constructor( initPerson : initPersonUrlType ) {
+    super(initPerson);
+    this.url = initPerson.url;
+  }
+}
+
+type initPersonPageType = initPersonType & {
+  address?: string;
+  email?: string;
+  phone_number?: string;
+  description?: ReactElement;
+};
+class PersonLocal extends Person {
+  address?: string;
+  email?: string;
+  phone_number?: string;
+  description?: ReactElement;
+
+  constructor( initPerson : initPersonPageType ) {
+    super(initPerson);
+    this.address = initPerson.address;
+    this.email = initPerson.email;
+    this.phone_number = initPerson.phone_number;
+    this.description = initPerson.description;
+  }
+}
+
+export {Person, PersonLocal, PersonUrl};

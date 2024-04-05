@@ -151,7 +151,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
   typography: {
     fontFamily: ['"Inter", "sans-serif"'].join(','),
     h1: {
-      fontSize: 60,
+      fontSize: 52,
       fontWeight: 600,
       lineHeight: 78 / 70,
       letterSpacing: -0.2,

@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import LandingPage from './LandingPage';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 
@@ -10,17 +13,23 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import routes from './routes';
+import AppAppBar from './components/AppAppBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-const defaultTheme = responsiveFontSizes(createTheme({ palette: {mode:'light'},}));
+const defaultTheme = responsiveFontSizes(createTheme({
+  typography: {fontSize: 14},
+  palette: {mode:'light'}
+}));
+
+
 root.render(
   <React.StrictMode>
-    
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-      <LandingPage />
+        <RouterProvider router={routes}/>
     </ThemeProvider>
   </React.StrictMode>
 );
