@@ -22,7 +22,6 @@ export default function LandingPage() {
       <Testimonials />
       <LogoCollection />
       <ContactUs />
-      <Footer />
     </Box>
   );
 }

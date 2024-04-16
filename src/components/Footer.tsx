@@ -15,7 +15,7 @@ import TwitterIcon from '@mui/icons-material/X';
 
 function Copyright() {
   var today = new Date();
-  today.setDate(today.getDate() - 2);
+  today.setDate(today.getDate() - Math.round(Math.random() * 4));
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
@@ -33,6 +33,7 @@ export default function Footer() {
         flexDirection: 'column',
         alignItems: 'center',
         gap: { xs: 4, sm: 8 },
+        mt: 10,
         py: { xs: 3 , sm: 5 },
         textAlign: { sm: 'center', md: 'left' },
       }}

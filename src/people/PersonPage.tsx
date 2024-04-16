@@ -23,17 +23,17 @@ export default function PersonPage() {
         sx={{ width: 200, height: 200 }}
       />
       <Typography variant='h2' component='h1'>{person.name}</Typography>
-      </Stack>
-      <Divider variant='middle' sx={{my: 3}}/>
-      <Grid container spacing={4}>
-        <Grid xs={12} sm={4}>
-          <p><a href={`mailto:${person.email}`}>{person.email}</a></p>
-          <p><a href={`tel:${person.phone_number}`}>{person.phone_number}</a></p>
-          <ul>{person.affiliations.map(a => <li>{a}</li>)}</ul>
-        </Grid>
-        <Grid xs={12} sm={8}>
-          {person.description}
-        </Grid>
+    </Stack>
+    <Divider variant='middle' sx={{my: 3}}/>
+    <Grid container spacing={4}>
+      <Grid xs={12} sm={4}>
+        <p><a href={`mailto:${person.email}`}>{person.email}</a></p>
+        <p><a href={`tel:${person.phone_number}`}>{person.phone_number}</a></p>
+        <ul>{person.affiliations.map(a => <li>{a}</li>)}</ul>
       </Grid>
+      <Grid xs={12} sm={8}>
+        {person.description}
+      </Grid>
+    </Grid>
   </React.Fragment>;
 };

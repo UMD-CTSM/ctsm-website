@@ -3,6 +3,7 @@ import AppAppBar from "../components/AppAppBar";
 import React from "react";
 import { Box, Container } from "@mui/material";
 import { useMatches } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
   const matches = useMatches();
@@ -29,6 +30,7 @@ export default function LandingPage() {
       {
         (topMargin)? <Box mt={15}><FullWidthEl/></Box> : <FullWidthEl/>
       }
+      <Footer />
     </React.Fragment>
   );
 }

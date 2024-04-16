@@ -1,5 +1,4 @@
 import {Person, PersonLocal, PersonUrl} from './PersonModel';
-import React from 'react';
 
 const peopleList : Person[] = [
   new PersonUrl({
