@@ -46,14 +46,12 @@ export default function Hero() {
             Center for Technology and Systems Management
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            The Infrastructure-Climate Networks (ICN) is an initiative of&nbsp;
-            <Link href="https://ctsm.umd.edu/">UMD's Center for Technology and Systems Management (CTSM)</Link> to develop and
-            provide analysis methods and tools of infrastructure networks for performance, reliability, resilience,
-            risk and economics subjected to natural and human-caused hazards with
-            climate mitigation and adaptation considerations for sustainability.
-            The underlying methods and tools are developed by researchers of&nbsp;
-            <Link href="https://ctsm.umd.edu/">CTSM</Link> from
-            the <Link href="https://cee.umd.edu/">Department of Civil and Environmental Engineering (CEE)</Link> at the <Link href="https://umd.edu/">University of Maryland (UMD)</Link>.
+          The CTSM's strength stems from its ability to develop technologies and creatively utilize sophisticated analytical
+          tools to meet a set of objectives for decision situations relating to various systems, such as defense, homeland security,
+          maritime, infrastructure, facility, health, intelligent and equipment systems. The technologies and systems are further
+          defined in the context of many industries. Using a matrix structure of technologies and systems, several primary thrust
+          areas were identified to constitute primary interests and the scope for the center by capitalizing on existing resources,
+          including the University of Maryland at-large.
           </Typography>
         </Stack>
       </Container>

@@ -20,9 +20,13 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 const defaultTheme = responsiveFontSizes(createTheme({
-  typography: {fontSize: 14},
+  typography: {
+    fontSize: 14
+  },
   palette: {mode:'light'}
-}));
+}), {
+  
+});
 
 
 root.render(

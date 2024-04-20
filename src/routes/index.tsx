@@ -5,6 +5,7 @@ import PageNotFound from "./PageNotFound";
 import People from "../people/PeoplePage";
 import PersonPage, { personLoader } from "../people/PersonPage";
 import ProjectsPage from "../projects/ProjectsPage";
+import ProjectPage, {projectLoader} from "../projects/ProjectPage";
 
 export default createBrowserRouter([
   {
@@ -35,8 +36,8 @@ export default createBrowserRouter([
       },
       {
         path: "research/:id",
-        loader: personLoader,
-        element: <PersonPage/>
+        loader: projectLoader,
+        element: <ProjectPage/>
       }
     ]
   },
