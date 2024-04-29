@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import React from "react";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 export default function Crepi2Description () {
   return <Stack spacing={2} alignItems='center'>
@@ -21,8 +20,11 @@ export default function Crepi2Description () {
       help the nation account for climate change in future infrastructure design and construction.
     </Typography>
     <Box>
-      <Button variant='contained' sx={{my:5, px: 5, py: 2}} href='https://www.asce.org/initiatives/asce-noaa-taskforce'>
-        Visit Website
+      <Button variant='contained' sx={{m:5, px: 5, py: 2}} href='https://www.asce.org/initiatives/asce-noaa-taskforce'>
+      More info on ASCE-NOAA Task Force
+      </Button>
+      <Button variant='contained' color="error" sx={{m:5, px: 5, py: 2}} href='https://www.youtube.com/playlist?list=PLKTTDX0F3fMBBFr2hH42zuX7t_fPcsEiG' startIcon={<YouTubeIcon/>}>
+      Visit the Youtube Channel
       </Button>
     </Box>
     <Typography variant='h4'>

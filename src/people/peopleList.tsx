@@ -1,4 +1,6 @@
+import { Box, Button, Typography } from '@mui/material';
 import {Person, PersonLocal, PersonUrl} from './PersonModel';
+
 
 const peopleList : Person[] = [
   new PersonUrl({
@@ -44,15 +46,65 @@ const peopleList : Person[] = [
     ],
     url: 'https://research.monash.edu/en/persons/athanasios-pantelous'
   }),
+  new PersonUrl({
+    id: 'kearney',
+    category: 'faculty',
+    name: 'Dr. Micheal Kearney',
+    affiliations: [
+      "Professor of Environmental Science and Technology",
+      "Department of Environmental Science and Technology",
+    ],
+    url: 'https://agnr.umd.edu/about/directory/michael-kearney'
+  }),
   new PersonLocal({
     id: 'chan',
     category: 'student',
-    name: 'Mr. Nathan Chan',
+    name: 'Nathan Chan',
     affiliations: [
       'Graduate Student, Institute of Systems Engineering, University of Maryland'
     ],
-
+    activeTill: new Date(2027, 5),
+    email: 'nczh@umd.edu'
+  }),
+  new PersonLocal({
+    id: 'selsibaie',
+    category: 'student',
+    name: 'Sherief Elsibaie',
+    affiliations: [
+      'Graduate Student, University of Maryland'
+    ]
+  }),
+  new PersonLocal({
+    id: 'mao',
+    category: 'student',
+    name: 'Yujie Mao',
+    affiliations: [
+      'Graduate Student, University of Maryland'
+    ]
   })
 ];
+export const leadResearcher = new PersonLocal({
+  id: 'ayyub',
+  category: "faculty",
+  name: "Dr. Ayyub Bilal",
+  affiliations: [
+    'Lead Researcher, Center for Technology and Systems Management',
+    'Professor, University of Maryland'
+  ],
+  email: 'ba@umd.edu',
+  phone_number: '301-405-1956',
+  description: <Box>
+    <Typography variant='body1' pb={3}>
+      Dr. Ayyub's main research interests and work are in risk, resilience, sustainability, uncertainty
+      and decision analysis, applied to civil, infrastructure, energy including renewables, defense and
+      maritime fields and climate-resilient infrastructure. Professor Ayyub is a distinguished member of
+      ASCE and an honorary member of ASME. He is also a fellow of the Society of Naval Architects and
+      Marine Engineers (SNAME), the Structural Engineering Institute (SEI), and the Society for Risk
+      Analysis (2017-18 Treasurer), and a senior member of the Institute of Electrical and Electronics
+      Engineers (IEEE).
+    </Typography>
+    <Button variant='outlined' href='https://cee.umd.edu/clark/faculty/243/Bilal-M-Ayyub'>Learn More</Button>
+  </Box>
+});
 
 export default peopleList;

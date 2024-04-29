@@ -50,7 +50,7 @@ export default class ProjectModel {
   sponsors: SponsorModel[] = [];
 
   isActive() {
-    return 
+    return this.active;
   }
 
   imageUrl() {

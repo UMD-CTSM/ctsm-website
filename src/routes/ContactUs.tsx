@@ -98,10 +98,7 @@ export default function ContactUs() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        pt: { xs: 8, sm: 12 },
-        pb: { xs: 5, sm: 8 },
-
+        alignItems: 'center'
       }}
     >
       
@@ -111,7 +108,7 @@ export default function ContactUs() {
           pl: { xs: 2, sm: 4},
           pr: { xs: 2, sm: 4},
           background: 'white'}} component="form" onSubmit={handleFormSubmit}>
-          <Typography variant="h2" sx={{textAlign: 'center'}}>Contact Us</Typography>
+          <Typography variant="h1" sx={{textAlign: 'center'}}>Contact Us</Typography>
             {(contacted)?<Typography variant='subtitle1' sx={{textAlign: 'center', py: 4}}>
         Contact request sent. We will be in touch shortly
       </Typography>:<React.Fragment>

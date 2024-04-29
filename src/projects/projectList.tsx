@@ -38,61 +38,64 @@ export const sponsors = {
 
 export const sponsorList : SponsorModel[] = Object.values(sponsors);
 
-const projectList : ProjectModel[] = [
-  new ProjectPageModel({
-    id: 'crepi2',
-    name: 'Climate Resilience in Engineering Practice for Infrastructure, ASCE-NOAA Task Force and Workshops',
-    sponsors: [sponsors.noaa, sponsors.asce],
-    fromYear: 2023,
-    toYear: 2025,
-    description: <Crepi2Description/>
-  }),
-  new ProjectModel({
-    id: 'crepi1',
-    active: false,
-    name: 'Climate Resilience in Engineering Practice for Infrastructure',
-    sponsor: sponsors.noaa,
-    fromYear: 2021,
-    toYear: 2023
-  }),
-  new ProjectModel({
-    id: 'cra',
-    name: 'Climate Risks and Adaptation',
-    sponsor: sponsors.noaa,
-    fromYear: 2023,
-    toYear: 2028
-  }),
-  new ProjectModel({
-    id: 'itcern',
-    name: 'Improved Topology Connectedness Efficiency for Railroad Networks',
-    sponsor: sponsors.fra,
-    fromYear: 2023,
-    toYear: 2026
-  }),
-  new ProjectModel({
-    id: 'resolve',
-    name: 'Resilient Solutions for Vulnerabilities and Emergencies (ReSolVE): An Effective National Risk Management Plan for Qatar',
-    sponsor: sponsors.qatarnrf,
-    fromYear: 2022,
-    toYear: 2028
-  }),
-  new ProjectModel({
-    id: 'oesi2',
-    name: 'Ocean Energy Safety Institute 2.0',
-    sponsor: sponsors.oesi,
-    fromYear: 2021,
-    toYear: 2026
-  }),
 
-  // new ProjectUrlModel({
-  //   id: 'icn',
-  //   name: 'Infrastructure-Climate Networks',
-  //   description: <React.Fragment>
-  //     The Infrastructure-Climate Networks (ICN) is an initiative to develop and provide analysis methods and tools
-  //     of infrastructure networks for performance, reliability, resilience, risk and economics subjects.
-  //   </React.Fragment>,
-  //   url: 'https://www.infrastructureclimate.net/'
-  // })
-];
-
-export default projectList;
+export default function projectListFn (){
+  console.log('Yo');
+  // projectList : ProjectModel[] 
+  return [
+    new ProjectPageModel({
+      id: 'climate',
+      name: 'Climate Resilience in Engineering Practice for Infrastructure, ASCE-NOAA Task Force and Workshops',
+      sponsors: [sponsors.noaa, sponsors.asce],
+      fromYear: 2023,
+      toYear: 2025,
+      description: <Crepi2Description/>
+    }),
+    new ProjectModel({
+      id: 'crepi1',
+      active: false,
+      name: 'Climate Resilience in Engineering Practice for Infrastructure',
+      sponsor: sponsors.noaa,
+      fromYear: 2021,
+      toYear: 2023
+    }),
+    new ProjectModel({
+      id: 'cra',
+      name: 'Climate Risks and Adaptation',
+      sponsor: sponsors.noaa,
+      fromYear: 2023,
+      toYear: 2028
+    }),
+    new ProjectModel({
+      id: 'itcern',
+      name: 'Improved Topology Connectedness Efficiency for Railroad Networks',
+      sponsor: sponsors.fra,
+      fromYear: 2023,
+      toYear: 2026
+    }),
+    new ProjectModel({
+      id: 'resolve',
+      name: 'Resilient Solutions for Vulnerabilities and Emergencies (ReSolVE): An Effective National Risk Management Plan for Qatar',
+      sponsor: sponsors.qatarnrf,
+      fromYear: 2022,
+      toYear: 2028
+    }),
+    new ProjectModel({
+      id: 'oesi2',
+      name: 'Ocean Energy Safety Institute 2.0',
+      sponsor: sponsors.oesi,
+      fromYear: 2021,
+      toYear: 2026
+    }),
+  
+    // new ProjectUrlModel({
+    //   id: 'icn',
+    //   name: 'Infrastructure-Climate Networks',
+    //   description: <React.Fragment>
+    //     The Infrastructure-Climate Networks (ICN) is an initiative to develop and provide analysis methods and tools
+    //     of infrastructure networks for performance, reliability, resilience, risk and economics subjects.
+    //   </React.Fragment>,
+    //   url: 'https://www.infrastructureclimate.net/'
+    // })
+  ];
+};

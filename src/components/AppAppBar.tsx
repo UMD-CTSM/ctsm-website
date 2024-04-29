@@ -42,10 +42,9 @@ function AppAppBar() {
   // };
 
   const menuLinks = [
-    {link:'/', text: 'Home'},
-    {link:'research', text: 'Our Research'},
-    {link:'team', text: 'The Team'},
-    {link:'publications', text: 'Our Publications'},
+    {link:'research', text: 'Research'},
+    {link:'team', text: 'Team'},
+    {link:'publications', text: 'Publications'},
     {link:'contact', text: 'Contact Us'},
   ];
 
@@ -92,11 +91,13 @@ function AppAppBar() {
                 px: 0,
               }}
             >
-              <img
-                src={logo}
-                style={logoStyle}
-                alt="logo"
-              />
+              <RouterLink to='/'>
+                <img
+                  src={logo}
+                  style={logoStyle}
+                  alt="logo"
+                />
+              </RouterLink>
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 {menuLinks.map(({link, text}) => <MenuItem
                   sx={{ py: '6px', px: '12px' }}

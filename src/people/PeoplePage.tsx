@@ -6,6 +6,8 @@ import { Person, PersonLocal, PersonUrl, PersonCategoryType } from "./PersonMode
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import PersonIcon from '@mui/icons-material/Person';
 
+const DATE_NOW =  new Date();
+
 export default function People() {
   const peopleByCategory = PeopleList.reduce((byCategory : {[K in PersonCategoryType]? : Person[]}, person : Person) => {
     if ( !byCategory[person.category] ) {
@@ -18,6 +20,9 @@ export default function People() {
 
   return (
     <Grid container spacing={2}>
+      <Grid xs={12}>
+        <Typography variant='h2' component='h1' py={2}>Our Team</Typography>
+      </Grid>
       {Object.entries(peopleByCategory).map(([categoryName,people]) => 
       <React.Fragment>
         <Grid xs={12}>
@@ -34,11 +39,15 @@ export default function People() {
 const PersonList = ({personList} : {personList : Person[]}) =>{
 
   return <React.Fragment>
-    {personList.map(person => <PersonCard person={person}/>)}
+    {personList.filter(p => !p.activeTill || p.activeTill > DATE_NOW ).map(person => 
+      <Grid xs={12} sm={4} md={3}>
+        <PersonCard person={person}/>
+      </Grid>
+    )}
   </React.Fragment>;
 }
 
-const PersonCard = ({person}: {person: Person}) => {
+export const PersonCard = ({person}: {person: Person}) => {
   const personUrl =
     (person instanceof PersonUrl)? person.url:
     (person instanceof PersonLocal)? person.id : null;
@@ -63,11 +72,11 @@ const PersonCard = ({person}: {person: Person}) => {
       <Typography variant='caption'>{person.primaryAffiliation()}</Typography>
     </CardContent>
   </React.Fragment>;
-  return <Grid xs={12} sm={4} md={3}><Card key={person.name}>
+  return <Card key={person.name}>
     {
       (personUrl)?
         <CardActionArea component={Link} to={personUrl}>{cardBody}</CardActionArea>:
         <CardActionArea>{cardBody}</CardActionArea>
     }
-  </Card></Grid>
+  </Card>;
 }

@@ -6,7 +6,8 @@ type initPersonType = {
   enable?: boolean,
   category: PersonCategoryType,
   name: string,
-  id: string
+  id: string,
+  activeTill?: Date
 }
 class Person {
   id: string;
@@ -14,6 +15,7 @@ class Person {
   category: PersonCategoryType;
   name: string;
   affiliations: string[];
+  activeTill?: Date;
 
   constructor( initPerson : initPersonType) {
     this.id = initPerson.id;
@@ -21,6 +23,7 @@ class Person {
     this.category = initPerson.category;
     this.name = initPerson.name;
     this.affiliations = initPerson.affiliations;
+    this.activeTill = initPerson.activeTill;
   }
 
   imageUrl() {

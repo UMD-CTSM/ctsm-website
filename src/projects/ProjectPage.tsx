@@ -7,14 +7,14 @@ import projectList from "./projectList";
 
 
 export async function projectLoader({ params } : any) {
-  const project = projectList.find( p => p.id === params.id);
+  const project = projectList().find( p => p.id === params.id);
   return {project};
 }
 
 export default function ProjectPage() {
   const { project } = useLoaderData() as { project: ProjectModel};
   return <React.Fragment>
-    <Typography variant='h4' component='h1'>{project.name}</Typography>
+    <Typography variant='h3' component='h1'>{project.name}</Typography>
     <Typography variant='body2'>
       {project.yearDisp()}
     </Typography>
