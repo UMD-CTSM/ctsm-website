@@ -3,14 +3,11 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import bg2 from '../images/bg2.jpg';
 import { Button, CardActions, CircularProgress,  Divider,  Stack } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 
@@ -30,7 +27,7 @@ export const loadPapers = async ( paramsOverride : any = undefined) => {
   if (resp.ok && resp.status === 200){
     const j = await resp.json();
     const filteredPubs = j.message.items?.filter(
-      (p:any) => p.score > 20 && (p.type=='journal-article' || p.type==='proceedings-article')
+      (p:any) => p.score > 20 && (p.type==='journal-article' || p.type==='proceedings-article')
     ).sort((p:any) => p.published['date-parts'][0][0]);
     return filteredPubs.map((p : any) => {
       if (p.abstract){

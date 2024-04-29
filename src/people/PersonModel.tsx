@@ -52,11 +52,13 @@ type initPersonPageType = initPersonType & {
   email?: string;
   phone_number?: string;
   description?: ReactElement;
+  orcid_id?: string;
 };
 class PersonLocal extends Person {
   address?: string;
   email?: string;
   phone_number?: string;
+  orcid_id?: string;
   description?: ReactElement;
 
   constructor( initPerson : initPersonPageType ) {
@@ -65,6 +67,7 @@ class PersonLocal extends Person {
     this.email = initPerson.email;
     this.phone_number = initPerson.phone_number;
     this.description = initPerson.description;
+    this.orcid_id = initPerson.orcid_id;
   }
 }
 

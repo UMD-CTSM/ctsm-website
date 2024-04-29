@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import {Person, PersonLocal, PersonUrl} from './PersonModel';
+import React from 'react';
 
 
 const peopleList : Person[] = [
@@ -70,9 +71,22 @@ const peopleList : Person[] = [
     id: 'selsibaie',
     category: 'student',
     name: 'Sherief Elsibaie',
+    orcid_id: '0009-0004-8424-8982',
+    email: 'elsibaie@umd.edu',
+    activeTill: new Date(2026, 5),
     affiliations: [
       'Graduate Student, University of Maryland'
-    ]
+    ],
+    description: <React.Fragment>
+      <Typography variant='h4' component='h4'>Research Interests</Typography>
+      <Typography>
+        <ul>
+      <li>Resilience, storm surge modeling, seismic resilience, railroad transportation.</li>
+      <li>Network/Graph theory, algorithms, efficiency, machine learning.</li>
+      <li>Decision supports: Benefit Cost Analysis enhancements with uncertainty, risk aversion, probability risk assessments, Bayesian networks</li>
+      </ul>
+    </Typography>
+    </React.Fragment>
   }),
   new PersonLocal({
     id: 'mao',

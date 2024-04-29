@@ -1,8 +1,8 @@
-import { Avatar, Box, Divider, Stack, Typography } from "@mui/material";
+import { Avatar, Divider, Stack, Typography } from "@mui/material";
 import React from "react";
 import peopleList from "./peopleList";
 import { useLoaderData } from "react-router-dom";
-import { Person, PersonLocal } from "./PersonModel";
+import { PersonLocal } from "./PersonModel";
 import Grid from '@mui/material/Unstable_Grid2';
 
 export async function personLoader({ params } : any) {
@@ -29,6 +29,7 @@ export default function PersonPage() {
       <Grid xs={12} sm={4}>
         <p><a href={`mailto:${person.email}`}>{person.email}</a></p>
         <p><a href={`tel:${person.phone_number}`}>{person.phone_number}</a></p>
+        <p><a href={`https://orcid.org/${person.orcid_id}`}>{person.orcid_id}</a></p>
         <ul>{person.affiliations.map(a => <li>{a}</li>)}</ul>
       </Grid>
       <Grid xs={12} sm={8}>

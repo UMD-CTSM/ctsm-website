@@ -1,10 +1,8 @@
-import { AvatarGroup, Card, CardActionArea, CardContent, CardHeader, Divider, Paper, Stack, Typography } from "@mui/material";
+import { AvatarGroup, Card, CardActionArea, CardContent, CardHeader, Divider, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import React from "react";
 
 import projectList from "./projectList";
 import ProjectModel, { ProjectPageModel, ProjectUrlModel, sponsorLogoDisp } from "./ProjectModel";
-import { Link } from "react-router-dom";
 
 
 export const ProjectCard = ( {project, sx} :{project:ProjectModel, sx?: any} ) => <Card>
@@ -43,13 +41,13 @@ export default function ProjectsPage() {
     </Grid>
     
 
-    <Divider sx={{pt:4}} />
+    {/* <Divider sx={{pt:4}} />
     
     <Typography variant='h2' component='h2'>Research Areas</Typography>
 
     <Divider sx={{pt:4}} />
 
-    <Typography variant='h2' component='h2'>Past Projects</Typography>
+    <Typography variant='h2' component='h2'>Past Projects</Typography> */}
     
   </Stack>
 };

@@ -1,18 +1,13 @@
-
-
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from "@mui/material/Unstable_Grid2";
 
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import bg2 from '../images/bg2.jpg';
-import { Button, CardActionArea, CardActions, CardMedia, CircularProgress,  Divider,  ImageList,  ImageListItem,  ImageListItemBar,  Stack } from '@mui/material';
-import { Link, Link as RouterLink } from "react-router-dom";
+import { Button, CardActionArea, CardMedia, CircularProgress,  Divider,  Stack } from '@mui/material';
 
 export const BookCard = ( { book : b } : { book : any} ) => <Card>
   <CardActionArea href={`https://openlibrary.org${b.key}`}>

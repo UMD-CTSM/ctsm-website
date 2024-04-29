@@ -1,5 +1,4 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { redirect } from "react-router-dom";
 
 import LandingPage from "../homePage/LandingPage";
 import Page from "./Page";

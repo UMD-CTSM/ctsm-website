@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 export default function Crepi2Description () {
