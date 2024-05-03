@@ -30,6 +30,20 @@ export const BookCard = ( { book : b } : { book : any} ) => <Card>
   />
 </Card>;
 
+const filterList = [
+  '/works/OL21040912W',
+  '/works/OL25107663W',
+  '/works/OL37557499W',
+  '/works/OL25102586W',
+  '/works/OL25073715W',
+  '/works/OL2681380W',
+  '/works/OL25189540W',
+  '/works/OL16940894W',
+  '/works/OL2681387W',
+  '/works/OL25234109W',
+  '/works/OL2681385W'
+];
+
 export const loadBooks = async ( paramOverride? : any) => {
   const searchUrl = new URL('/search.json?author=OL391465A&sort=new&fields=?' + new URLSearchParams({
     author: 'OL391465A',
@@ -38,7 +52,7 @@ export const loadBooks = async ( paramOverride? : any) => {
     ...paramOverride
   }), 'https://openlibrary.org');
   const j = await (await fetch(searchUrl, {})).json();
-  return j.docs.filter((b:any)=>b.key !== '/works/OL25107663W');
+  return j.docs.filter((b:any)=>b.cover_i && !filterList.includes(b.key));
 }
 
 export default function BooksPage() {
@@ -68,7 +82,7 @@ export default function BooksPage() {
             </Grid>
             )}
           </Grid>
-          {(books.length >= ((showAddtlBooks + 1) * BOOKS_PER_PAGE))?<Button onClick={() => setShowAddtlBooks(showAddtlBooks + 1)} startIcon={<ExpandMoreIcon/>}>Show more</Button>:''}
+          {(books.length >= ((showAddtlBooks + 1) * BOOKS_PER_PAGE))?<Button onClick={() => setShowAddtlBooks(showAddtlBooks + 1)} startIcon={<ExpandMoreIcon/>}>Show more books</Button>:''}
           {(showAddtlBooks > 0)?<Button onClick={() => setShowAddtlBooks(0)} startIcon={<ExpandLessIcon/>}>Hide</Button>:''}
         </Stack>
   );

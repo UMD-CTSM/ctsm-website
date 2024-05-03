@@ -110,7 +110,7 @@ export default function PapersPage() {
                 </Card>
               </Grid>)}
             <Grid item xs={12} textAlign='center'>
-              {(papers.length >= ((showAddtlArticles + 1) * PAPERS_PER_PAGE))?<Button onClick={() => setShowAddtlArticles(showAddtlArticles + 1)} startIcon={<ExpandMoreIcon/>}> Show more</Button>:''}
+              {(papers.length >= ((showAddtlArticles + 1) * PAPERS_PER_PAGE))?<Button onClick={() => setShowAddtlArticles(showAddtlArticles + 1)} startIcon={<ExpandMoreIcon/>}> Show more publications</Button>:''}
               {(showAddtlArticles > 0)?<Button onClick={() => setShowAddtlArticles(0)} startIcon={<ExpandLessIcon/>}> Hide</Button>:''}
             </Grid>
           </Grid>

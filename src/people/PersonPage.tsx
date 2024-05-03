@@ -32,7 +32,7 @@ export default function PersonPage() {
         <p><a href={`https://orcid.org/${person.orcid_id}`}>{person.orcid_id}</a></p>
         <ul>{person.affiliations.map(a => <li>{a}</li>)}</ul>
       </Grid>
-      <Grid xs={12} sm={8}>
+      <Grid xs={12} sm={8} spacing={4}>
         {person.description}
       </Grid>
     </Grid>

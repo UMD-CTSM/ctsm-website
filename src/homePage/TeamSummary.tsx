@@ -10,7 +10,7 @@ export default function TeamSummary() {
   const otherList = filteredPeople.slice(0, 6 - studentList.length);
   filteredPeople = otherList.concat(studentList);
   return <Container sx={{py:2}}>
-  <Typography variant='h2' component='h2' sx={{pb: 5}}  textAlign='center'>Our Team</Typography>
+  <Typography variant='h2' component='h2' sx={{pb: 5}}  textAlign='center'>Team</Typography>
   <Grid container spacing={2}>
     <Grid xs={12} sm={4} p={3}>
       <Box position='relative' height='0' pb='100%'>

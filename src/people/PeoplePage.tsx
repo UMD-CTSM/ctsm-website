@@ -21,16 +21,17 @@ export default function People() {
   return (
     <Grid container spacing={2}>
       <Grid xs={12}>
-        <Typography variant='h2' component='h1' py={2}>Our Team</Typography>
+        <Typography variant='h2' component='h1' py={2}>Team</Typography>
       </Grid>
-      {Object.entries(peopleByCategory).map(([categoryName,people]) => 
-      <React.Fragment>
-        <Grid xs={12}>
-          <Typography variant='h3' component='h2'>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</Typography>
-        </Grid>
-        <PersonList personList={people}/>
-      </React.Fragment>
-      )}
+      {Object.entries(peopleByCategory).map(([categoryName,people]) => {
+        people = people.sort((a, b) => a.name.localeCompare(b.name));
+        return <React.Fragment>
+          <Grid xs={12}>
+            <Typography variant='h3' component='h2'>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</Typography>
+          </Grid>
+          <PersonList personList={people}/>
+        </React.Fragment>;
+      })}
     </Grid>
   );
 }

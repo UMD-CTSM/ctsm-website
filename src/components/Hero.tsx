@@ -35,14 +35,12 @@ export default function Hero() {
             component="h1"
             variant="h2"
             sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' },
-              alignSelf: 'center',
               textAlign: 'center',
             }}
           >
             Center for Technology and Systems Management
           </Typography>
+          <Typography variant="subtitle1" textAlign='center'>Technology for Intelligent Decisions</Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
           The CTSM's strength stems from its ability to develop technologies and creatively utilize sophisticated analytical
           tools to meet a set of objectives for decision situations relating to various systems, such as defense, homeland security,

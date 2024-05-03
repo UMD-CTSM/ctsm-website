@@ -41,13 +41,13 @@ export default function ProjectsPage() {
     </Grid>
     
 
-    {/* <Divider sx={{pt:4}} />
+    <Divider sx={{pt:4}} />
     
     <Typography variant='h2' component='h2'>Research Areas</Typography>
 
     <Divider sx={{pt:4}} />
 
-    <Typography variant='h2' component='h2'>Past Projects</Typography> */}
+    <Typography variant='h2' component='h2'>Past Projects</Typography>
     
   </Stack>
 };

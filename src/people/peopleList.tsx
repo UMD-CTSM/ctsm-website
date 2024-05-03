@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from '@mui/material';
 import {Person, PersonLocal, PersonUrl} from './PersonModel';
 import React from 'react';
+import MElsibaiePage from './pages/melsibaie';
+import RFinkensteinPage from './pages/rfinkenstein';
 
 
 const peopleList : Person[] = [
@@ -40,23 +42,83 @@ const peopleList : Person[] = [
   }),
   new PersonUrl({
     id: 'pantelous',
-    category: 'faculty',
+    category: 'advisor',
     name: 'Dr. Athanasios Pantelous',
     affiliations: [
       'Associate Professor, Department of Econometrics and Business Statistics, Monash University, Australia'
     ],
     url: 'https://research.monash.edu/en/persons/athanasios-pantelous'
   }),
-  new PersonUrl({
-    id: 'kearney',
-    category: 'faculty',
-    name: 'Dr. Micheal Kearney',
+  new PersonLocal({
+    id: 'melsibaie',
+    category: 'advisor',
+    name: 'Dr. Magdy Elsibaie',
     affiliations: [
-      "Professor of Environmental Science and Technology",
-      "Department of Environmental Science and Technology",
+      'Associate Administrator for Hazardous Materials Safety for the US Department of Transportation'
     ],
-    url: 'https://agnr.umd.edu/about/directory/michael-kearney'
+    email: 'elsibaie@yahoo.com',
+    phone_number: '+1 703 401-5331',
+    description: <MElsibaiePage/>
   }),
+  new PersonLocal({
+    id: 'finklestein',
+    category: 'advisor',
+    name: 'Dr. Robert Finkelstein',
+    affiliations: [
+      'President of Robotic Technology Inc'
+    ],
+    email: 'BobF@RoboticTechnologyInc.com',
+    description: <RFinkensteinPage/>
+  }),
+  new PersonLocal({
+    id: 'moss',
+    category: 'advisor',
+    name: 'Dr. Richard Moss',
+    affiliations: [
+      'Senior Scientist at Pacific Northwest National Laboratory’s Joint Global Change Research Institute',
+      'Adjunct Professor in the Department of Geographical Sciences at the University of Maryland, College Park'
+    ],
+    email: 'rhm@pnnl.gov',
+    description: <Typography>
+      Dr. Moss's research on global environmental change focuses on (1) scenarios (including the Representative
+      Concentration Pathways (RCPs), (2) uncertainty characterization in integrated models and scientific assessments,
+      and (3) methods for evaluating potential consequences of interacting societal and environmental changes. Moss
+      has held several public service positions including Director of the US Global Change Research Program/Climate
+      Change Science Program Office (spanning the Clinton and G.W. Bush Administrations) and technical support
+      director for one of the working groups of the Intergovernmental Panel on Climate Change. Moss chairs the
+      Federal Advisory Committee for the Sustained US National Climate Assessment and the National Academy of Science’s
+      Board on Environmental Change and Society. He is a fellow of the American Society for the Advancement of Science.
+      He received his Ph.D. from Princeton University in public and international affairs.
+    </Typography>
+  }),
+  new PersonUrl({
+    id: 'assakkaf',
+    category: 'advisor',
+    name: 'Dr. Ibrahim Assakkaf',
+    affiliations: [
+      'Director of Reliability Research, Center for Technology and Systems Management'
+    ],
+    url: 'https://www.assakkaf.com/'
+  }),
+  new PersonUrl({
+    id: 'pourgol',
+    category: 'advisor',
+    name: 'Dr. Mohammad Pourgol',
+    affiliations: [
+      'Associate Professor, Mechanical Engineering, University of Maryland'
+    ],
+    url: 'https://enme.umd.edu/clark/faculty/1400/Mohammad-Pourgol/'
+  }),
+  new PersonUrl({
+    id: 'firebaugh',
+    category: 'advisor',
+    name: 'Dr. Millard Firebaugh',
+    affiliations: [
+      'Glenn L. Institute Professor of Engineering and Professor of Practice, Center for Engineering Concepts Development, University of Maryland'
+    ],
+    url: 'https://enme.umd.edu/clark/faculty/536/Millard-S-Firebaugh/'
+  }),
+
   new PersonLocal({
     id: 'chan',
     category: 'student',
@@ -92,9 +154,18 @@ const peopleList : Person[] = [
     id: 'mao',
     category: 'student',
     name: 'Yujie Mao',
+    orcid_id: '0000-0002-2751-4306',
     affiliations: [
       'Graduate Student, University of Maryland'
-    ]
+    ],
+    description: <React.Fragment>
+      <Typography variant='h4' component='h4'>Research Interest</Typography>
+      <Typography>
+        <ul>
+          <li>Resilience, railroad transportation, hazmat, Network/Graph theory, algorithms, efficiency</li>
+        </ul>
+      </Typography>
+    </React.Fragment>
   })
 ];
 export const leadResearcher = new PersonLocal({
