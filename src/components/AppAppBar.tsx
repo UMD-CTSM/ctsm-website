@@ -45,6 +45,7 @@ function AppAppBar() {
     {link:'research', text: 'Research'},
     {link:'team', text: 'Team'},
     {link:'publications', text: 'Publications'},
+    {link:'tools', text: 'Tools'},
     {link:'contact', text: 'Contact Us'},
   ];
 

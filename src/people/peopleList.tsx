@@ -12,7 +12,7 @@ const peopleList : Person[] = [
     name: "Dr. Ayyub Bilal",
     url: "https://cee.umd.edu/clark/faculty/243/Bilal-M-Ayyub",
     affiliations: [
-      'Lead Researcher, Center for Technology and Systems Management',
+      'Director, Center for Technology and Systems Management',
       'Professor, University of Maryland'
     ]
   }),
@@ -51,7 +51,7 @@ const peopleList : Person[] = [
   }),
   new PersonLocal({
     id: 'melsibaie',
-    category: 'advisor',
+    category: 'faculty',
     name: 'Dr. Magdy Elsibaie',
     affiliations: [
       'Associate Administrator for Hazardous Materials Safety for the US Department of Transportation'
@@ -102,7 +102,7 @@ const peopleList : Person[] = [
   }),
   new PersonUrl({
     id: 'pourgol',
-    category: 'advisor',
+    category: 'faculty',
     name: 'Dr. Mohammad Pourgol',
     affiliations: [
       'Associate Professor, Mechanical Engineering, University of Maryland'
@@ -124,7 +124,7 @@ const peopleList : Person[] = [
     category: 'student',
     name: 'Nathan Chan',
     affiliations: [
-      'Graduate Student, Institute of Systems Engineering, University of Maryland'
+      'MS Student, Institute of Systems Engineering, University of Maryland'
     ],
     activeTill: new Date(2027, 5),
     email: 'nczh@umd.edu'
@@ -137,7 +137,7 @@ const peopleList : Person[] = [
     email: 'elsibaie@umd.edu',
     activeTill: new Date(2026, 5),
     affiliations: [
-      'Graduate Student, University of Maryland'
+      'PhD Student, Department of Civil Engineering, University of Maryland'
     ],
     description: <React.Fragment>
       <Typography variant='h4' component='h4'>Research Interests</Typography>
@@ -156,7 +156,7 @@ const peopleList : Person[] = [
     name: 'Yujie Mao',
     orcid_id: '0000-0002-2751-4306',
     affiliations: [
-      'Graduate Student, University of Maryland'
+      'PhD Student, Department of Reliability Engineering, University of Maryland'
     ],
     description: <React.Fragment>
       <Typography variant='h4' component='h4'>Research Interest</Typography>
@@ -173,7 +173,7 @@ export const leadResearcher = new PersonLocal({
   category: "faculty",
   name: "Dr. Ayyub Bilal",
   affiliations: [
-    'Lead Researcher, Center for Technology and Systems Management',
+    'Director, Center for Technology and Systems Management',
     'Professor, University of Maryland'
   ],
   email: 'ba@umd.edu',

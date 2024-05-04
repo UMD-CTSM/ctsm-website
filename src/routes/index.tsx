@@ -9,6 +9,7 @@ import ProjectsPage from "../projects/ProjectsPage";
 import ProjectPage, {projectLoader} from "../projects/ProjectPage";
 import PublicationPage from "../publications/PublicationPage";
 import ContactUs from "./ContactUs";
+import ToolsPage from "../tools/ToolsPage";
 
 
 export default createBrowserRouter([
@@ -50,6 +51,10 @@ export default createBrowserRouter([
       {
         path: 'climate',
         element: <Navigate to="/research/climate" replace/>
+      },
+      {
+        path: 'tools',
+        element: <ToolsPage/>
       },
       {
         path: 'contact',

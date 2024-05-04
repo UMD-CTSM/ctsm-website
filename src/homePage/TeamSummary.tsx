@@ -37,7 +37,7 @@ export default function TeamSummary() {
       {leadResearcher.description}
     </Grid>
     <Grid xs={12}>
-      <Typography variant='h3' component='h3' py={3} textAlign='center'>Our other team members</Typography>
+      {/* <Typography variant='h3' component='h3' py={3} textAlign='center'>Our other team members</Typography> */}
     </Grid>
     {filteredPeople.map(p =>
       <Grid xs={6} sm={3} md={2}>

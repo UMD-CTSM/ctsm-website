@@ -29,7 +29,7 @@ export default function PersonPage() {
       <Grid xs={12} sm={4}>
         <p><a href={`mailto:${person.email}`}>{person.email}</a></p>
         <p><a href={`tel:${person.phone_number}`}>{person.phone_number}</a></p>
-        <p><a href={`https://orcid.org/${person.orcid_id}`}>{person.orcid_id}</a></p>
+        {(person.orcid_id)?<p>ORCID: <a href={`https://orcid.org/${person.orcid_id}`}>{person.orcid_id}</a></p>:''}
         <ul>{person.affiliations.map(a => <li>{a}</li>)}</ul>
       </Grid>
       <Grid xs={12} sm={8} spacing={4}>

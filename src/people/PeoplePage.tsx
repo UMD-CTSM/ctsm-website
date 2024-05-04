@@ -8,6 +8,13 @@ import PersonIcon from '@mui/icons-material/Person';
 
 const DATE_NOW =  new Date();
 
+const CATEGORY_TITLE : { [K in PersonCategoryType]:string } = {
+  'faculty': 'Faculty',
+  'advisor': 'Advisors',
+  'student': 'Students',
+  'alumni': "Alumni"
+};
+
 export default function People() {
   const peopleByCategory = PeopleList.reduce((byCategory : {[K in PersonCategoryType]? : Person[]}, person : Person) => {
     if ( !byCategory[person.category] ) {
@@ -24,10 +31,11 @@ export default function People() {
         <Typography variant='h2' component='h1' py={2}>Team</Typography>
       </Grid>
       {Object.entries(peopleByCategory).map(([categoryName,people]) => {
+        const categoryName2 : PersonCategoryType = categoryName as PersonCategoryType;
         people = people.sort((a, b) => a.name.localeCompare(b.name));
         return <React.Fragment>
           <Grid xs={12}>
-            <Typography variant='h3' component='h2'>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</Typography>
+            <Typography variant='h3' component='h2'>{CATEGORY_TITLE[categoryName2]}</Typography>
           </Grid>
           <PersonList personList={people}/>
         </React.Fragment>;
@@ -41,7 +49,7 @@ const PersonList = ({personList} : {personList : Person[]}) =>{
 
   return <React.Fragment>
     {personList.filter(p => !p.activeTill || p.activeTill > DATE_NOW ).map(person => 
-      <Grid xs={12} sm={4} md={3}>
+      <Grid xs={6} sm={3} md={2}>
         <PersonCard person={person}/>
       </Grid>
     )}
