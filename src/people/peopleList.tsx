@@ -9,10 +9,10 @@ const peopleList : Person[] = [
   new PersonUrl({
     id: 'ayyub',
     category: "faculty",
-    name: "Dr. Ayyub Bilal",
+    name: "Dr. Bilal Ayyub",
     url: "https://cee.umd.edu/clark/faculty/243/Bilal-M-Ayyub",
     affiliations: [
-      'Director, Center for Technology and Systems Management',
+      'Professor and Director, Center for Technology and Systems Management',
       'Professor, University of Maryland'
     ]
   }),
@@ -38,37 +38,40 @@ const peopleList : Person[] = [
       water resource management, oil spill impacts and response, to the national security implications of
       environmental and climate information, eventually being named a National Academies' Scholar in 2006.
     </p>,
-    email: "dwalker8@umd.edu"
-  }),
-  new PersonUrl({
-    id: 'pantelous',
-    category: 'advisor',
-    name: 'Dr. Athanasios Pantelous',
-    affiliations: [
-      'Associate Professor, Department of Econometrics and Business Statistics, Monash University, Australia'
-    ],
-    url: 'https://research.monash.edu/en/persons/athanasios-pantelous'
+    email: "dwalker8@umd.edu",
+    homepage: true
   }),
   new PersonLocal({
     id: 'melsibaie',
     category: 'faculty',
     name: 'Dr. Magdy Elsibaie',
     affiliations: [
-      'Associate Administrator for Hazardous Materials Safety for the US Department of Transportation'
+      'Former Associate Administrator for Hazardous Materials Safety for the US Department of Transportation'
     ],
     email: 'elsibaie@yahoo.com',
     phone_number: '+1 703 401-5331',
-    description: <MElsibaiePage/>
+    description: <MElsibaiePage/>,
+    homepage: true
   }),
-  new PersonLocal({
-    id: 'finklestein',
-    category: 'advisor',
-    name: 'Dr. Robert Finkelstein',
+  new PersonUrl({
+    id: 'pourgol',
+    category: 'faculty',
+    name: 'Dr. Mohammad Pourgol',
     affiliations: [
-      'President of Robotic Technology Inc'
+      'Associate Professor, Mechanical Engineering, University of Maryland'
     ],
-    email: 'BobF@RoboticTechnologyInc.com',
-    description: <RFinkensteinPage/>
+    url: 'https://enme.umd.edu/clark/faculty/1400/Mohammad-Pourgol/',
+    homepage: true
+  }),
+  new PersonUrl({
+    id: 'firebaugh',
+    category: 'advisor',
+    name: 'Dr. Millard Firebaugh',
+    affiliations: [
+      'Glenn L. Institute Professor of Engineering and Professor of Practice, Center for Engineering Concepts Development, University of Maryland'
+    ],
+    url: 'https://enme.umd.edu/clark/faculty/536/Millard-S-Firebaugh/',
+    homepage: true
   }),
   new PersonLocal({
     id: 'moss',
@@ -91,6 +94,25 @@ const peopleList : Person[] = [
       He received his Ph.D. from Princeton University in public and international affairs.
     </Typography>
   }),
+  new PersonLocal({
+    id: 'finklestein',
+    category: 'advisor',
+    name: 'Dr. Robert Finkelstein',
+    affiliations: [
+      'President of Robotic Technology Inc'
+    ],
+    email: 'BobF@RoboticTechnologyInc.com',
+    description: <RFinkensteinPage/>
+  }),
+  new PersonUrl({
+    id: 'pantelous',
+    category: 'advisor',
+    name: 'Dr. Athanasios Pantelous',
+    affiliations: [
+      'Associate Professor, Department of Econometrics and Business Statistics, Monash University, Australia'
+    ],
+    url: 'https://research.monash.edu/en/persons/athanasios-pantelous'
+  }),
   new PersonUrl({
     id: 'assakkaf',
     category: 'advisor',
@@ -100,24 +122,8 @@ const peopleList : Person[] = [
     ],
     url: 'https://www.assakkaf.com/'
   }),
-  new PersonUrl({
-    id: 'pourgol',
-    category: 'faculty',
-    name: 'Dr. Mohammad Pourgol',
-    affiliations: [
-      'Associate Professor, Mechanical Engineering, University of Maryland'
-    ],
-    url: 'https://enme.umd.edu/clark/faculty/1400/Mohammad-Pourgol/'
-  }),
-  new PersonUrl({
-    id: 'firebaugh',
-    category: 'advisor',
-    name: 'Dr. Millard Firebaugh',
-    affiliations: [
-      'Glenn L. Institute Professor of Engineering and Professor of Practice, Center for Engineering Concepts Development, University of Maryland'
-    ],
-    url: 'https://enme.umd.edu/clark/faculty/536/Millard-S-Firebaugh/'
-  }),
+
+
 
   new PersonLocal({
     id: 'chan',
@@ -155,6 +161,7 @@ const peopleList : Person[] = [
     category: 'student',
     name: 'Yujie Mao',
     orcid_id: '0000-0002-2751-4306',
+    activeTill: new Date(2026, 5),
     affiliations: [
       'PhD Student, Department of Reliability Engineering, University of Maryland'
     ],
@@ -166,14 +173,49 @@ const peopleList : Person[] = [
         </ul>
       </Typography>
     </React.Fragment>
+  }),
+  new PersonLocal({
+    id: 'curtis',
+    category: 'student',
+    name: 'Lance Curtis',
+    email: 'lrcurtis@umd.edu',
+    activeTill: new Date(2027, 5),
+    affiliations: [
+      'PhD Student, Department of Reliability Engineering, University of Maryland'
+    ],
+    description: <React.Fragment>
+      Lance R Curtis is a PhD student in the Reliability Engineering program at the University of Maryland and
+      an adjunct professor at Howard Community College.  Previously, he worked in industry as a materials engineer
+      for The M&P Lab (Schenectady, NY) conducting metallurgical evaluations and failure analyses and for GE Power
+      (Greenville, SC) as a reliability engineer modeling gas turbines for electrical power production.  He earned
+      his BS in metallurgical engineering and his MS in mechanical engineering from the University of Idaho in 2001
+      and 2003, respectively.  Mr. Curtis’s research interests primarily center around the entropic characterization
+      of failure mechanisms, particularly fatigue in metals, as well as metallurgical/mechanical failure analysis;
+      modeling damage accumulation, reliability, resilience, and uncertainty; and engineering education.  He is a
+      member of ASME, ASM International, the Society for Risk Analysis, ASEE, and an associate of the National Academy
+      of Forensic Engineers.
+    </React.Fragment>
+  }),
+  new PersonLocal({
+    id: 'swarray',
+    category: 'student',
+    name: 'Ansumana Swarray',
+    email: 'aswarray@umd.edu',
+    activeTill: new Date(2028, 5),
+    affiliations: [
+      'PhD Student, Department of Reliability Engineering, University of Maryland'
+    ],
+    description: <React.Fragment>
+      Ansumana Swarray's focus is climate risk assessment and management
+    </React.Fragment>
   })
 ];
 export const leadResearcher = new PersonLocal({
   id: 'ayyub',
   category: "faculty",
-  name: "Dr. Ayyub Bilal",
+  name: "Dr. Bilal Ayyub",
   affiliations: [
-    'Director, Center for Technology and Systems Management',
+    'Professor and Director, Center for Technology and Systems Management',
     'Professor, University of Maryland'
   ],
   email: 'ba@umd.edu',

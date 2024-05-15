@@ -5,10 +5,10 @@ import { PersonCard } from "../people/PeoplePage";
 import { Link } from "react-router-dom";
 
 export default function TeamSummary() {
-  let filteredPeople = peopleList.filter(p => p.id !== 'ayyub');
-  const studentList = filteredPeople.filter(p => p.category === 'student');
-  const otherList = filteredPeople.slice(0, 6 - studentList.length);
-  filteredPeople = otherList.concat(studentList);
+  const filteredPeople = peopleList.filter(p => p.id !== 'ayyub' && p.homepage).concat(
+    peopleList.filter(p => p.category === 'student')
+    .sort((a,b)=>(((a.activeTill)?a.activeTill.getTime():1) - ((b.activeTill)?b.activeTill.getTime():0)))
+  ).slice(0,6);
   return <Container sx={{py:2}}>
   <Typography variant='h2' component='h2' sx={{pb: 5}}  textAlign='center'>Team</Typography>
   <Grid container spacing={2}>
