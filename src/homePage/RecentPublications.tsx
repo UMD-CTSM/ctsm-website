@@ -17,7 +17,8 @@ export default function RecentPublications() {
       setPapers(p.slice(0,3));
     });
     
-    loadBooks({limit: 2}).then((b : any) => {
+    loadBooks({q:'key:("/works/OL38068323W" OR "/works/OL21040912W")'}).then((b : any) => {
+      console.log(b);
       setBooks(b);
     });
 

@@ -31,7 +31,7 @@ export const BookCard = ( { book : b } : { book : any} ) => <Card>
 </Card>;
 
 const filterList = [
-  '/works/OL21040912W',
+  '/works/OL2681383W',
   '/works/OL25107663W',
   '/works/OL37557499W',
   '/works/OL25102586W',
@@ -45,7 +45,7 @@ const filterList = [
 ];
 
 export const loadBooks = async ( paramOverride? : any) => {
-  const searchUrl = new URL('/search.json?author=OL391465A&sort=new&fields=?' + new URLSearchParams({
+  const searchUrl = new URL('/search.json?' + new URLSearchParams({
     author: 'OL391465A',
     sort: 'new',
     fields: ['key','first_publish_year','title', 'cover_i'].join(','),
