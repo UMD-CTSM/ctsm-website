@@ -26,7 +26,7 @@ export const BookCard = ( { book : b } : { book : any} ) => <Card>
   <CardHeader
     title={b.title}
     titleTypographyProps={{variant: 'body1', fontWeight: 'bold'}}
-    subheader={b.first_publish_year}
+    subheader={b.publish_year}
   />
 </Card>;
 
@@ -41,18 +41,20 @@ const filterList = [
   '/works/OL16940894W',
   '/works/OL2681387W',
   '/works/OL25234109W',
-  '/works/OL2681385W'
+  '/works/OL2681385W',
+  '/works/OL16175777W'
 ];
 
 export const loadBooks = async ( paramOverride? : any) => {
   const searchUrl = new URL('/search.json?' + new URLSearchParams({
     author: 'OL391465A',
     sort: 'new',
-    fields: ['key','first_publish_year','title', 'cover_i'].join(','),
+    fields: ['key','first_publish_year','title', 'cover_i', 'editions', 'editions.publish_year', 'editions.key'].join(','),
+    'editions.sort': 'new',
     ...paramOverride
   }), 'https://openlibrary.org');
   const j = await (await fetch(searchUrl, {})).json();
-  return j.docs.filter((b:any)=>b.cover_i && !filterList.includes(b.key));
+  return j.docs.filter((b:any)=>b.cover_i && !filterList.includes(b.key)).map((b:any) => ({...b, publish_year: b.editions.docs[0].publish_year})).sort((a:any,b:any)=> b.publish_year-a.publish_year);
 }
 
 export default function BooksPage() {
@@ -62,6 +64,7 @@ export default function BooksPage() {
   const [showAddtlBooks, setShowAddtlBooks] = React.useState(0);
   React.useEffect(() => {
     loadBooks().then( bookList => {
+      console.log(bookList);
       setLoading(false);
       setBooks(bookList);
     });
