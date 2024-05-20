@@ -6,13 +6,16 @@ import ProjectModel, { ProjectPageModel, ProjectUrlModel, sponsorLogoDisp } from
 import researchAreas, {researchAreasList} from "./researchAreaList";
 import React, { useEffect, useState } from "react";
 import ResearchAreaModel from "./ResearchAreaModel";
+import { Link } from "react-router-dom";
 
 
 export const ProjectCard = ( {project, sx} :{project:ProjectModel, sx?: any} ) => {
-  
-  const ProjectCardContent = () => <React.Fragment>
+  return <Card>
     <CardContent>
       <Typography variant='h5' component='h3'>{project.name}</Typography>
+    {(project instanceof ProjectUrlModel || project instanceof ProjectPageModel)?
+    <Button variant='outlined' sx={{my:2}} href={(project instanceof ProjectUrlModel)?project.url:
+      (project instanceof ProjectPageModel)?project.id:undefined}>Learn More</Button>:''}
     </CardContent>
     <CardHeader
       avatar={
@@ -21,14 +24,6 @@ export const ProjectCard = ( {project, sx} :{project:ProjectModel, sx?: any} ) =
       title={`Sponsored by: ${project.sponsors.map(s => s.name).join(', ')}`}
       subheader={project.yearDisp()}
     />
-  </React.Fragment>;
-  return <Card>
-    {(project instanceof ProjectUrlModel || project instanceof ProjectPageModel)?<CardActionArea
-      sx={sx} {...{href: 
-        (project instanceof ProjectUrlModel)?project.url:
-        (project instanceof ProjectPageModel)?project.id:undefined}}>
-      <ProjectCardContent/>
-    </CardActionArea>:<ProjectCardContent/>}
   </Card>;
 }
 
