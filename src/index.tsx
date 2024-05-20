@@ -21,7 +21,14 @@ const defaultTheme = responsiveFontSizes(createTheme({
   typography: {
     fontSize: 14
   },
-  palette: {mode:'light'}
+  palette: {mode:'light'},
+  components: {
+    MuiCard: {
+      defaultProps: {
+        variant: 'outlined'
+      }
+    }
+  }
 }), {
   
 });
