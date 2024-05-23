@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Box, Button, Card, CardContent, Container, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Container, Stack, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { loadPapers } from "../publications/PapersPage";
 import courseList from "../publications/CourseList";

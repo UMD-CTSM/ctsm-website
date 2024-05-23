@@ -8,7 +8,7 @@ export default function Crepi2Description () {
   </Button>
     <Typography variant='body1' >
       <Box sx={{float: 'left'}} width={{xs: '100%', sm: '300px'}} p={4}>
-        <img src='/images/projects/crepi2/ASCE-NOAA-UMD-Logos.png' width='100%' />
+        <img src='/images/projects/crepi2/ASCE-NOAA-UMD-Logos.png' width='100%' alt='ASCE, NOAA and UMD Logos' />
       </Box>
       The vast majority of building codes in the United States and abroad rely on consensus guidance provided by the American
       Society of Civil Engineers (ASCE), the nation's oldest engineering society. With climate change continuing to worsen,

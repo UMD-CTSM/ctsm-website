@@ -1,5 +1,4 @@
-import React from "react";
-import ProjectModel, { ProjectPageModel, ProjectUrlModel, SponsorModel } from "./ProjectModel";
+import ProjectModel, { ProjectPageModel } from "./ProjectModel";
 
 import Crepi2Description from './projectPages/crepi2';
 import sponsors from "./sponsorList";

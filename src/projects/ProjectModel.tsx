@@ -65,10 +65,10 @@ export default class ProjectModel {
     this.name = initProject.name;
     this.description = initProject.description;
     this.fromYear = initProject.fromYear;
-    if (initProject.toYear != undefined ) this.toYear = initProject.toYear;
-    this.ongoing = (initProject.ongoing != undefined )? initProject.ongoing :
+    if (initProject.toYear !== undefined ) this.toYear = initProject.toYear;
+    this.ongoing = (initProject.ongoing !== undefined )? initProject.ongoing :
       (this.fromYear)?
-        THIS_YEAR >= this.fromYear && (this.toYear == 'present' || THIS_YEAR <= this.toYear) :
+        THIS_YEAR >= this.fromYear && (this.toYear === 'present' || THIS_YEAR <= this.toYear) :
         true;
     if ( initProject.sponsors ) {
       this.sponsors = initProject.sponsors;

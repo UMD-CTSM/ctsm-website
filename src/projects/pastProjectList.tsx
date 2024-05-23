@@ -1,4 +1,4 @@
-import ProjectModel, { ProjectPageModel } from "./ProjectModel";
+import ProjectModel from "./ProjectModel";
 import researchAreas from "./researchAreaList";
 import sponsors from "./sponsorList";
 export default function pastProjectList (){

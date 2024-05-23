@@ -1,4 +1,4 @@
-import { Autocomplete, AvatarGroup, Box, Button, Card, CardActionArea, CardContent, CardHeader, Chip, Divider, Stack, TextField, Typography } from "@mui/material";
+import { Autocomplete, AvatarGroup, Box, Button, Card, CardContent, CardHeader, Chip, Divider, Stack, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
 import projectList from "./projectList";
@@ -6,7 +6,6 @@ import ProjectModel, { ProjectPageModel, ProjectUrlModel, sponsorLogoDisp } from
 import researchAreas, {researchAreasList} from "./researchAreaList";
 import React, { useEffect, useState } from "react";
 import ResearchAreaModel from "./ResearchAreaModel";
-import { Link } from "react-router-dom";
 
 
 export const ProjectCard = ( {project, sx} :{project:ProjectModel, sx?: any} ) => {
@@ -37,7 +36,7 @@ export function ResearchAreaSelect({ onChange } : { onChange : ( area: ResearchA
   useEffect(() => onChange(
     Object.entries(areasSelected)
       .filter(([_, selected])=>selected).map(([name, _]) => researchAreas[name as keyof typeof researchAreas])),
-    [areasSelected]);
+    [areasSelected, researchAreas]);
   return <React.Fragment>
     <Autocomplete
         sx={{ display: { xs: 'flex', sm: 'none' }}}

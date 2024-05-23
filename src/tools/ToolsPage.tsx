@@ -14,7 +14,7 @@ export default function ToolsPage() {
         <Typography variant='h2' component='h2'>Infrastructure-Climate Networks</Typography>
       </Grid>
       <Grid xs={12} sm={4} textAlign='center'>
-        <img src={icn_logo} height={200}/>
+        <img src={icn_logo} height={200} alt='ICN Logo'/>
       </Grid>
       <Grid xs={12} sm={8} sx={{
           display: 'flex',

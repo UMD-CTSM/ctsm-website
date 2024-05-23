@@ -1,4 +1,4 @@
-import { Box, Divider, Paper, Stack, Typography } from "@mui/material";
+import { Divider, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import ProjectModel, { sponsorLogoDisp } from "./ProjectModel";
