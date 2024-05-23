@@ -4,7 +4,7 @@ import { Stack } from '@mui/material';
 import RecentPublications from './RecentPublications';
 import TeamSummary from './TeamSummary';
 import MainProjects from './MainProjects';
-import Sponsors from '../components/Sponsors';
+import SponsorLogos from './SponsorLogos';
 
 
 export default function LandingPage() {
@@ -18,7 +18,7 @@ export default function LandingPage() {
       <Divider sx={{width:'100%'}}/>
       <RecentPublications/>
       <Divider sx={{width:'100%'}}/>
-      <Sponsors/>
+      <SponsorLogos/>
     </Stack>
   );
 }
