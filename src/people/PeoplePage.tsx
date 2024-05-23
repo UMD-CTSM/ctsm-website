@@ -32,7 +32,11 @@ export default function People() {
       </Grid>
       {Object.entries(peopleByCategory).map(([categoryName,people]) => {
         const categoryName2 : PersonCategoryType = categoryName as PersonCategoryType;
-        people = people.sort((a, b) => a.name.localeCompare(b.name));
+        if (categoryName2 === 'student') {
+          people = people.sort((a, b) => (a?.activeTill?.getTime() || 10000) - (b?.activeTill?.getTime() || 10000));
+        } else {
+          people = people.sort((a, b) => a.name.localeCompare(b.name));
+        }
         return <React.Fragment>
           <Grid xs={12}>
             <Typography variant='h3' component='h2'>{CATEGORY_TITLE[categoryName2]}</Typography>
