@@ -13,10 +13,10 @@ const researchAreas = {
     id: 'uncertainty',
     name: 'Uncertainty Modeling'
   }),
-  intelligent: new ResearchAreaModel({
-    id: 'intelligent',
-    name: 'Intelligent Systems'
-  }),
+  // intelligent: new ResearchAreaModel({
+  //   id: 'intelligent',
+  //   name: 'Intelligent Systems'
+  // }),
   climate: new ResearchAreaModel({
     id: 'climate',
     name: 'Climate Change'

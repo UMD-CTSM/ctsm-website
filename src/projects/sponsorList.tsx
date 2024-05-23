@@ -30,7 +30,38 @@ const sponsors = {
     id: 'oesi',
     name: 'Ocean Energy Safety Institute',
     url: 'https://oesi.tamu.edu/'
-  })
+  }),
+  usarmyeng: new SponsorModel({
+    id: 'usace',
+    name: 'U.S. Army Corps of Engineers',
+    url: 'https://www.usace.army.mil/'
+  }),
+  fda: new SponsorModel({
+    id: 'fda',
+    name: 'U.S. Food and Drug Administration',
+    url: 'https://www.fda.gov/'
+  }),
+  uscg: new SponsorModel({
+    id: 'uscg',
+    name: 'U.S. Coast Guard',
+    url: 'https://www.uscg.mil/'
+  }),
+  dhs: new SponsorModel({
+    id: 'dhs',
+    name: 'U.S. Department of Homeland Security',
+    url: 'https://www.dhs.gov/'
+  }),
+  afrl: new SponsorModel({
+    id: 'afrl',
+    name: 'US Air Force Research Laboratory',
+    url: 'https://www.afrl.af.mil/'
+  }),
+  nsf: new SponsorModel({
+    id: 'nsf',
+    name: 'U.S. National Science Foundation',
+    url: 'https://nsf.gov'
+  }),
+  
 };
 export default sponsors;
 export const sponsorList : SponsorModel[] = Object.values(sponsors);
