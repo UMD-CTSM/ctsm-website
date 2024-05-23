@@ -10,6 +10,7 @@ import ProjectPage, {projectLoader} from "../projects/ProjectPage";
 import PublicationPage from "../publications/PublicationPage";
 import ContactUs from "./ContactUs";
 import ToolsPage from "../tools/ToolsPage";
+import ArchivedPapers from "../publications/ArchivedPapers";
 
 
 export default createBrowserRouter([
@@ -47,6 +48,10 @@ export default createBrowserRouter([
       {
         path: "publications",
         element: <PublicationPage/>
+      },
+      {
+        path: "archive",
+        element: <ArchivedPapers/>
       },
       {
         path: 'climate',
