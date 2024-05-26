@@ -63,7 +63,7 @@ const PersonList = ({personList} : {personList : Person[]}) =>{
 export const PersonCard = ({person}: {person: Person}) => {
   const personUrl =
     (person instanceof PersonUrl)? person.url:
-    (person instanceof PersonLocal)? person.id : null;
+    (person instanceof PersonLocal)? '/team/' + person.id : null;
   const [imageMissing, setImageMissing] = useState(false);
   const cardBody = <React.Fragment>
     {imageMissing? null:
