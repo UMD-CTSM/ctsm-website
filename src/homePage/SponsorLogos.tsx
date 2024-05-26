@@ -12,6 +12,7 @@ import qatarFoundLogo from './sponsor_logos/qatar.png';
 import mccLogo from './sponsor_logos/mcc.png';
 import doeLogo from './sponsor_logos/doe.png';
 import teeLogo from './sponsor_logos/tee.svg';
+import tjuLogo from './sponsor_logos/tju.png';
 import { Container } from '@mui/material';
 
 const logos = [
@@ -23,7 +24,8 @@ const logos = [
   {url: 'https://www.energy.gov/', logo: doeLogo},
   {url: 'https://bsee.gov/', logo: bseeLogo},
   {url: 'https://www.qf.org.qa/', logo: qatarFoundLogo},
-  {url: 'https://www.mcc.gov/', logo: mccLogo}
+  {url: 'https://www.mcc.gov/', logo: mccLogo},
+  {url: 'https://en.tongji.edu.cn/', logo: tjuLogo}
 ];
 
 export default function SponsorLogos() {
