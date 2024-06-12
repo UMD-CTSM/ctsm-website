@@ -59,7 +59,7 @@ export default function RecentPublications() {
         sx={{width:'100%'}}
         component={Link}
         to='publications'
-      >View More</Button>
+      >More...</Button>
     </Box>
   </Container>;
 }

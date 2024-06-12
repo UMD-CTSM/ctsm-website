@@ -24,7 +24,7 @@ export default function Crepi2Description () {
       <Button variant='outlined' sx={{m:5, px: 5, py: 2}} href='https://www.asce.org/initiatives/asce-noaa-taskforce'>
       More info on ASCE-NOAA Task Force
       </Button>
-      <Button variant='contained' color="error" sx={{m:5, px: 5, py: 2, textTransform: 'none'}} href='https://www.youtube.com/playlist?list=PLKTTDX0F3fMBBFr2hH42zuX7t_fPcsEiG' startIcon={<YouTubeIcon/>} >
+      <Button variant='contained' color="error" sx={{m:5, px: 5, py: 2}} href='https://www.youtube.com/playlist?list=PLKTTDX0F3fMBBFr2hH42zuX7t_fPcsEiG' startIcon={<YouTubeIcon/>} >
       Visit the Task Force Youtube Channel
       </Button>
     </Typography>

@@ -12,7 +12,7 @@ export default function projectList (){
   const activeProjects = [
     new ProjectPageModel({
       id: 'climate',
-      name: 'American Society of Civil Engineers - National Oceanic and Atmospheric Administration Task Force on Climate Resilience in Engineering Practice',
+      name: 'ASCE-NOAA Task Force on Climate Resilience in Engineering Practice',
       sponsors: [sponsors.noaa, sponsors.asce],
       fromYear: 2021,
       // toYear: 2025,

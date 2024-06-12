@@ -19,7 +19,7 @@ export default function MainProjects() {
         sx={{width:'100%'}}
         component={Link}
         to='research'
-      >View More</Button>
+      >More...</Button>
     </Box>
   </Container>;
 };

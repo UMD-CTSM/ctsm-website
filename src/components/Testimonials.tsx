@@ -131,7 +131,7 @@ export default function Testimonials() {
             </Grid>
           ))}
         </Grid>
-        <Link href='https://ctsm.umd.edu/portfolio/journals/'>View more...</Link>
+        <Link href='https://ctsm.umd.edu/portfolio/journals/'>More...</Link>
       </Container>
     </Box>
   );

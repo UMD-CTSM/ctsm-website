@@ -14,7 +14,7 @@ export const ProjectCard = ( {project, sx} :{project:ProjectModel, sx?: any} ) =
       <Typography variant='h5' component='h3'>{project.name}</Typography>
     {(project instanceof ProjectUrlModel || project instanceof ProjectPageModel)?
     <Button variant='outlined' sx={{my:2}} href={(project instanceof ProjectUrlModel)?project.url:
-      (project instanceof ProjectPageModel)?`./research/${project.id}`:undefined}>Learn More</Button>:''}
+      (project instanceof ProjectPageModel)?`./research/${project.id}`:undefined}>More...</Button>:''}
     </CardContent>
     <CardHeader
       avatar={

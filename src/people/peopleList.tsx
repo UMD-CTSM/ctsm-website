@@ -215,8 +215,7 @@ export const leadResearcher = new PersonLocal({
   category: "faculty",
   name: "Dr. Bilal Ayyub",
   affiliations: [
-    'Professor and Director, Center for Technology and Systems Management',
-    'Professor, University of Maryland'
+    'Professor and Director, Center for Technology and Systems Management, University of Maryland'
   ],
   email: 'ba@umd.edu',
   phone_number: '301-405-1956',
@@ -230,7 +229,7 @@ export const leadResearcher = new PersonLocal({
       Analysis (2017-18 Treasurer), and a senior member of the Institute of Electrical and Electronics
       Engineers (IEEE).
     </Typography>
-    <Button variant='outlined' href='https://cee.umd.edu/clark/faculty/243/Bilal-M-Ayyub'>Learn More</Button>
+    <Button variant='outlined' href='https://cee.umd.edu/clark/faculty/243/Bilal-M-Ayyub'>More...</Button>
   </Box>
 });
 

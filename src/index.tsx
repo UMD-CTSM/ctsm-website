@@ -27,6 +27,13 @@ const defaultTheme = responsiveFontSizes(createTheme({
       defaultProps: {
         variant: 'outlined'
       }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none'
+        }
+      }
     }
   }
 }), {

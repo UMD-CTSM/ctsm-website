@@ -50,7 +50,7 @@ export default function TeamSummary() {
           sx={{width:'100%'}}
           component={Link}
           to='team'
-        >View More</Button>
+        >More...</Button>
     </Grid>
   </Grid>
 </Container>;
