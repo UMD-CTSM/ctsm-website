@@ -2,7 +2,7 @@
   "name": "ctsm_website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://ctsm.umd.edu",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.4",
@@ -50,6 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://api.crossref.org/"
+  }
 }
