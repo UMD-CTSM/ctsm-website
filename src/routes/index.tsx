@@ -50,7 +50,7 @@ export default createBrowserRouter([
         element: <PublicationPage/>
       },
       {
-        path: "archive",
+        path: "archive-page",
         element: <ArchivedPapers/>
       },
       {

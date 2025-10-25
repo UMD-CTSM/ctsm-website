@@ -1,0 +1,22 @@
+diff --git a/node_modules/react-scripts/config/webpack.config.js b/node_modules/react-scripts/config/webpack.config.js
+index e465d8e..1ed81c7 100644
+--- a/node_modules/react-scripts/config/webpack.config.js
++++ b/node_modules/react-scripts/config/webpack.config.js
+@@ -199,7 +199,7 @@ module.exports = function (webpackEnv) {
+   return {
+     target: ['browserslist'],
+     // Webpack noise constrained to errors and warnings
+-    stats: 'errors-warnings',
++    stats: 'verbose',
+     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
+     // Stop compilation early in production
+     bail: isEnvProduction,
+@@ -760,7 +760,7 @@ module.exports = function (webpackEnv) {
+             ],
+           },
+           logger: {
+-            infrastructure: 'silent',
++            infrastructure: 'console',
+           },
+         }),
+       !disableESLintPlugin &&

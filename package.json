@@ -21,17 +21,17 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "react-truncate-markup": "^5.1.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "upload": "npm run build && scp -r ./build/. fxcrsymy@162.241.225.96:~/public_html/website_e7c96460"
+    "upload": "npm run build && scp -r ./build/ fxcrsymy@162.241.225.96:~/public_html/website_e7c96460"
   },
   "eslintConfig": {
     "extends": [

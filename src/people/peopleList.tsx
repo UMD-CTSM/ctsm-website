@@ -122,6 +122,15 @@ const peopleList : Person[] = [
     ],
     url: 'https://www.assakkaf.com/'
   }),
+  new PersonUrl({
+    id: 'mccuen',
+    category: "faculty",
+    name: "Dr. Richard McCuen",
+    url: "https://cee.umd.edu/clark/faculty/280/Richard-H-McCuen",
+    affiliations: [
+      'Professor Emeritus, Civil and Environmental Engineering'
+    ]
+  }),
 
 
 

@@ -116,7 +116,7 @@ export default function PapersPage() {
               
             </Grid>
           </Grid>
-          <Button href='archive' startIcon={<Archive/>}>Archived Papers</Button>
+          <Button href='archive-page' startIcon={<Archive/>}>Archived Papers</Button>
         </Stack>
   );
 }
