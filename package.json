@@ -35,7 +35,7 @@
     "set-gh-homepage": "node scripts/set-gh-homepage.js",
     "set-prod-homepage": "node scripts/set-prod-homepage.js",
     "predeploy": "npm run set-gh-homepage && npm run build",
-    "deploy": "gh-pages -d build && npm run set-prod-homepage"
+    "deploy": "gh-pages -d build; npm run set-prod-homepage"
   },
   "eslintConfig": {
     "extends": [
