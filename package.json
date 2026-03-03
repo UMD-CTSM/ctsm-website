@@ -32,8 +32,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "upload": "npm run build && scp -r ./build/ fxcrsymy@162.241.225.96:~/public_html/website_e7c96460",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "set-gh-homepage": "node scripts/set-gh-homepage.js",
+    "set-prod-homepage": "node scripts/set-prod-homepage.js",
+    "predeploy": "npm run set-gh-homepage && npm run build",
+    "deploy": "gh-pages -d build && npm run set-prod-homepage"
   },
   "eslintConfig": {
     "extends": [
