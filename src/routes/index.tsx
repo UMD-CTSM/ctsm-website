@@ -12,6 +12,8 @@ import ContactUs from "./ContactUs";
 import ToolsPage from "../tools/ToolsPage";
 import ArchivedPapers from "../publications/ArchivedPapers";
 
+// Get basename from environment or use root for production
+const basename = process.env.PUBLIC_URL || '/';
 
 export default createBrowserRouter([
   {
@@ -71,4 +73,4 @@ export default createBrowserRouter([
   //   path: "/icn",
   //   element: <LandingPage/>
   // },
-]);
+], { basename });
