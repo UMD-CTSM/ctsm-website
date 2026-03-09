@@ -184,6 +184,16 @@ const peopleList : Person[] = [
     </React.Fragment>
   }),
   new PersonLocal({
+    id: 'dzedzy',
+    category: 'student',
+    name: 'Don Dzedzy',
+    activeTill: new Date(2028, 5),
+    affiliations: [
+      'PhD Student, Department of Reliability Engineering, University of Maryland'
+    ],
+    url: 'https://www.linkedin.com/in/ddzedzy'
+  }),
+  new PersonLocal({
     id: 'curtis',
     category: 'student',
     name: 'Lance Curtis',
@@ -192,6 +202,7 @@ const peopleList : Person[] = [
     affiliations: [
       'PhD Student, Department of Reliability Engineering, University of Maryland'
     ],
+    url: 'https://crr.umd.edu/student-story/student-spotlight-lance-curtis',
     description: <React.Fragment>
       Lance R Curtis is a PhD student in the Reliability Engineering program at the University of Maryland and
       an adjunct professor at Howard Community College.  Previously, he worked in industry as a materials engineer
@@ -208,12 +219,13 @@ const peopleList : Person[] = [
   new PersonLocal({
     id: 'swarray',
     category: 'student',
-    name: 'Ansumana Swarray',
+    name: 'Ansu',
     email: 'aswarray@umd.edu',
     activeTill: new Date(2028, 5),
     affiliations: [
       'PhD Student, Department of Reliability Engineering, University of Maryland'
     ],
+    url: 'https://sl.linkedin.com/in/ansumana-swarray-315b8077',
     description: <React.Fragment>
       Ansumana Swarray's focus is climate risk assessment and management
     </React.Fragment>

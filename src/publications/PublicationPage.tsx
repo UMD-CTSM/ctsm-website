@@ -10,7 +10,7 @@ export default function PublicationPage() {
     <Typography component='h1' variant='h1'>Publications</Typography>
     <PapersPage/>
     <BlogPostsPage/>
-    <CoursesPage/>
     <BooksPage/>
+    <CoursesPage/>
   </Stack>
 }

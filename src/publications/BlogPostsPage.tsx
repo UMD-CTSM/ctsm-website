@@ -1,12 +1,15 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { CircularProgress, Divider, Stack } from '@mui/material';
 
 export const loadBlogPosts = async (limit?: number) => {
-  const apiUrl = `https://technology-for-intelligent-decisions.ghost.io/ghost/api/content/posts/?key=504e7dbb1cb83bfabd492074ef${limit ? `&limit=${limit}` : ''}`;
+  // Default to 4 most recent posts
+  const postLimit = limit || 4;
+  const apiUrl = `https://technology-for-intelligent-decisions.ghost.io/ghost/api/content/posts/?key=504e7dbb1cb83bfabd492074ef&limit=${postLimit}`;
   
   try {
     console.log('Fetching blog posts from:', apiUrl);
@@ -33,7 +36,7 @@ export default function BlogPostsPage() {
   const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    loadBlogPosts().then(posts => {
+    loadBlogPosts(4).then(posts => {
       if (posts.length === 0) {
         setError('Unable to load blog posts. Please check the console for details.');
       }
@@ -81,6 +84,15 @@ export default function BlogPostsPage() {
                 }
               }}
             >
+              {post.feature_image && (
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={post.feature_image}
+                  alt={post.title}
+                  sx={{ objectFit: 'cover' }}
+                />
+              )}
               <CardContent>
                 <Typography variant="h6" component="h4" gutterBottom>
                   {post.title}
