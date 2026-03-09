@@ -45,32 +45,13 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "DEBUG: SSH_PRIVATE_KEY length: ${#SSH_PRIVATE_KEY}"
-          echo "DEBUG: SSH_HOST value: '$SSH_HOST'"
-          echo "DEBUG: SSH_USER value: '$SSH_USER'"
-          echo "DEBUG: SSH_PATH value: '$SSH_PATH'"
-          
-          if [ -z "$SSH_PRIVATE_KEY" ]; then
-            echo "ERROR: SSH_PRIVATE_KEY is empty!"
-            exit 1
-          fi
-          
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/ctsm_deploy
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/ctsm_deploy
           chmod 600 ~/.ssh/ctsm_deploy
-          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_PATH: ${{ secrets.SSH_PATH }}
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Deploy to production server
         run: |
-          scp -i ~/.ssh/ctsm_deploy -r ./build/* "$SSH_USER@$SSH_HOST:$SSH_PATH"
-        env:
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PATH: ${{ secrets.SSH_PATH }}
+          scp -i ~/.ssh/ctsm_deploy -r ./build/* "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}"
 
       - name: Cleanup
         if: always()
