@@ -4,11 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { CircularProgress, Divider, Stack } from '@mui/material';
+import { Button, CircularProgress, Divider, Stack } from '@mui/material';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const loadBlogPosts = async (limit?: number) => {
-  // Default to 4 most recent posts
-  const postLimit = limit || 4;
+  // Default to all posts for pagination
+  const postLimit = limit || 100;
   const apiUrl = `https://technology-for-intelligent-decisions.ghost.io/ghost/api/content/posts/?key=504e7dbb1cb83bfabd492074ef&limit=${postLimit}`;
   
   try {
@@ -34,9 +36,11 @@ export default function BlogPostsPage() {
   const [blogPosts, setBlogPosts] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
+  const BLOGS_PER_PAGE = 6;
+  const [showAddtlBlogs, setShowAddtlBlogs] = React.useState(0);
 
   React.useEffect(() => {
-    loadBlogPosts(4).then(posts => {
+    loadBlogPosts(100).then(posts => {
       if (posts.length === 0) {
         setError('Unable to load blog posts. Please check the console for details.');
       }
@@ -55,17 +59,15 @@ export default function BlogPostsPage() {
         Blog Posts
       </Typography>
       <Divider />
+      {loading && <CircularProgress />}
+      {error && !loading && (
+        <Typography color="error" variant="body1">
+          {error}
+        </Typography>
+      )}
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          {loading && <CircularProgress />}
-          {error && !loading && (
-            <Typography color="error" variant="body1">
-              {error}
-            </Typography>
-          )}
-        </Grid>
-        {blogPosts.map((post) => (
-          <Grid item xs={12} sm={6} md={4} key={post.id} sx={{ display: 'flex' }}>
+        {blogPosts.slice(0, (showAddtlBlogs + 1) * BLOGS_PER_PAGE).map((post) => (
+          <Grid item xs={12} sm={6} key={post.id} sx={{ display: 'flex' }}>
             <Card
               component="a"
               href={post.url}
@@ -117,6 +119,10 @@ export default function BlogPostsPage() {
           </Grid>
         ))}
       </Grid>
+      {(blogPosts.length > ((showAddtlBlogs + 1) * BLOGS_PER_PAGE)) ? 
+        <Button onClick={() => setShowAddtlBlogs(showAddtlBlogs + 1)} startIcon={<ExpandMoreIcon/>}>Show more blogs</Button> : ''}
+      {(showAddtlBlogs > 0) ? 
+        <Button onClick={() => setShowAddtlBlogs(0)} startIcon={<ExpandLessIcon/>}>Hide</Button> : ''}
     </Stack>
   );
 }
