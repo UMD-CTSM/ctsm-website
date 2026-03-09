@@ -47,11 +47,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/ctsm_deploy
           chmod 600 ~/.ssh/ctsm_deploy
-          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+          ssh-keyscan -H "${{ vars.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
 
       - name: Deploy to production server
         run: |
-          scp -i ~/.ssh/ctsm_deploy -r ./build/* "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}"
+          scp -i ~/.ssh/ctsm_deploy -r ./build/* "${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.SSH_PATH }}"
 
       - name: Cleanup
         if: always()
