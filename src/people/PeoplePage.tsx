@@ -12,7 +12,8 @@ const CATEGORY_TITLE : { [K in PersonCategoryType]:string } = {
   'faculty': 'Faculty',
   'advisor': 'Advisors',
   'student': 'Students',
-  'alumni': "Alumni"
+  'alumni': 'Alumni',
+  'faculty_research_assistant': 'Faculty Research Assistants'
 };
 
 export default function People() {
@@ -34,6 +35,8 @@ export default function People() {
         const categoryName2 : PersonCategoryType = categoryName as PersonCategoryType;
         if (categoryName2 === 'student') {
           people = people.sort((a, b) => (a?.activeTill?.getTime() || 10000) - (b?.activeTill?.getTime() || 10000));
+        } else if (categoryName2 === 'faculty_research_assistant') {
+          people = people;
         } else {
           people = people.sort((a, b) => a.name.localeCompare(b.name));
         }

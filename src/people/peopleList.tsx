@@ -229,7 +229,34 @@ const peopleList : Person[] = [
     description: <React.Fragment>
       Ansumana Swarray's focus is climate risk assessment and management
     </React.Fragment>
-  })
+  }),
+  new PersonLocal({
+   id: 'campbell',
+   category: 'faculty_research_assistant',
+   name: 'Ben Campbell',
+   affiliations: [
+    'Faculty Research Assistant on Nature-based Solutions and Associated Economics'
+   ],
+   description: <React.Fragment>
+    <Typography>
+      Ben Campbell is a Faculty Assistant on Nature-based Solutions and Associated Economics, working to support research into the integration of natural systems and ecosystem services in a cost-effective manner in hybrid, gray/green infrastructure. This builds on his role as an Environmental and Social Performance (ESP) Director for the last 17 years with the Millennium Challenge Corporation, a US foreign aid agency partnering with developing countries. As an ESP Director at MCC, he works with MCC teams and country partners to ensure that MCC Compacts and Thresholds are designed and implemented to reduce environmental and social risks and enhance benefits, including the practical application of nature-based solutions and climate resilient infrastructure. With MCC, Ben has worked in Benin, Cape Verde, Ecuador, Jordan, Lesotho, Liberia, Malawi, Moldova, Mozambique, the Philippines, Solomon Islands, Timor L’Este and Togo. Prior to MCC, Ben spent most of his career living and working in over 40 countries with international conservation and relief and development organizations. Ben holds two Master’s degrees: the first in International Political Economy from the University of Missouri-Columbia and the second in Environmental Management from Imperial College London. He is also fluent in Spanish and Portuguese.
+    </Typography>
+   </React.Fragment>
+   }),
+   new PersonLocal({
+    id: 'edwards',
+    category: 'faculty_research_assistant',
+    name: 'Meghan Edwards',
+    affiliations: [
+      'Executive Secretariat and Technical Coordination',
+      'ASCE–NOAA Task Force on Climate Resilience in Engineering Practice'
+    ],
+    description: <React.Fragment>
+     <Typography>
+       Meghan Edwards is a project and program management professional with nearly 20 years of experience supporting interdisciplinary technical teams in environmental compliance, climate resilience, and federal interagency coordination. Her work spans more than 70 environmental reviews across 40+ states and multiple countries, with expertise in renewable energy infrastructure, long-term land use planning, and sustainability programs. She has supported national efforts to integrate climate science into engineering practice, including providing executive secretariat and technical coordination for the ASCE–NOAA Task Force on Climate Resilience in Engineering Practice. Meghan holds a Master of Natural Resources from Virginia Tech and is a certified Project Management Professional (PMP), Agile Certified Practitioner (ACP), and Certified Virtual Facilitator.
+     </Typography>
+    </React.Fragment>
+    }),
 ];
 export const leadResearcher = new PersonLocal({
   id: 'ayyub',
