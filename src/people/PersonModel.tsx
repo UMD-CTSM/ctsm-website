@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export type PersonCategoryType = "faculty" | "advisor" | "student" | "alumni";
+export type PersonCategoryType = "faculty" | "advisor" | "student" | "alumni"| "faculty_research_assistant";
 type initPersonType = {
   affiliations: string[],
   enable?: boolean,
